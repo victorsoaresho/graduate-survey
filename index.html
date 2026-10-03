@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quem se forma no Brasil: dez anos de graduação e a virada da tecnologia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#F3F5F6;--paper:#FFFFFF;--ink:#14233A;--ink2:#46536A;--muted:#7A8496;--rule:#DCE1E7;--grid:#E7EBEF;
+--b1:#0E7C7B;--b2:#7CC4C2;--l1:#5B4FC4;--l2:#B3ACEB;--t1:#D2862A;--t2:#F0C47F;--hl:#E6F3F2;
+--serif:"Newsreader",Georgia,"Times New Roman",serif;--sans:"Archivo","Helvetica Neue",Arial,sans-serif;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1622;--paper:#152132;--ink:#E8EDF3;--ink2:#B4BFCD;--muted:#8693A6;--rule:#2A3A50;--grid:#22324A;--b1:#2FB3B0;--b2:#1E6766;--l1:#8E84F0;--l2:#4A4290;--t1:#EBA24A;--t2:#8A5B1E;--hl:#1A3436;}}
+:root[data-theme="dark"]{--bg:#0E1622;--paper:#152132;--ink:#E8EDF3;--ink2:#B4BFCD;--muted:#8693A6;--rule:#2A3A50;--grid:#22324A;--b1:#2FB3B0;--b2:#1E6766;--l1:#8E84F0;--l2:#4A4290;--t1:#EBA24A;--t2:#8A5B1E;--hl:#1A3436;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:19px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--b1);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,tr:focus-visible{outline:2px solid var(--b1);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.col{max-width:680px}
+header.top{padding:56px 0 28px}
+.kicker{font-family:var(--sans);font-size:14px;color:var(--b1);font-weight:600;margin:0 0 18px}
+h1{font-family:var(--sans);font-stretch:78%;font-weight:750;font-size:clamp(38px,6.4vw,68px);line-height:1;letter-spacing:-.01em;margin:0 0 22px;max-width:900px}
+.dek{font-size:22px;line-height:1.5;color:var(--ink2);margin:0 0 26px;max-width:700px}
+.byline{font-family:var(--sans);font-size:15px;color:var(--ink2);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;border-top:1px solid var(--rule);padding-top:16px}
+.byline strong{color:var(--ink);font-weight:650}
+.byline a{display:inline-flex;align-items:center;gap:6px;color:var(--ink2);text-decoration:none}
+.byline a:hover{color:var(--b1)}
+.byline svg{width:16px;height:16px;fill:currentColor}
+h2{font-family:var(--sans);font-stretch:82%;font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.1;margin:72px 0 18px}
+h3{font-family:var(--sans);font-weight:650;font-size:20px;line-height:1.3;margin:40px 0 10px}
+p{margin:0 0 1.1em}
+.figure{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:22px 22px 16px;margin:28px 0 30px}
+.figure .ttl{font-family:var(--sans);font-weight:650;font-size:17px;margin:0 0 4px}
+.figure .sub{font-family:var(--sans);font-size:14px;color:var(--muted);margin:0 0 16px;line-height:1.45}
+.figure .src{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin:14px 0 0;line-height:1.45}
+.filters{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:flex-end;margin:0 0 18px;font-family:var(--sans)}
+.fgroup{display:flex;flex-direction:column;gap:6px}
+.fgroup>span{font-size:12.5px;color:var(--muted);font-weight:500}
+.seg{display:inline-flex;flex-wrap:wrap;max-width:100%;border:1px solid var(--rule);border-radius:9px;padding:2px;background:var(--bg)}
+.seg button{font-family:var(--sans);font-size:13.5px;border:0;background:transparent;color:var(--ink2);padding:6px 11px;border-radius:7px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--paper);color:var(--ink);font-weight:600;box-shadow:0 0 0 1px var(--rule)}
+select{font-family:var(--sans);font-size:14px;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:9px;padding:7px 30px 7px 10px;max-width:260px;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.play{font-family:var(--sans);font-size:14px;font-weight:600;border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:9px;padding:7px 14px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.play svg{width:12px;height:12px;fill:currentColor}
+.racehead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:4px 0 6px;flex-wrap:wrap}
+.raceyear{font-family:var(--sans);font-stretch:75%;font-weight:800;font-size:clamp(64px,10vw,104px);line-height:.85;color:var(--ink);font-variant-numeric:tabular-nums}
+.racetot{font-family:var(--sans);font-size:14px;color:var(--muted);text-align:right}
+.racetot b{display:block;font-size:24px;color:var(--ink);font-weight:650;font-variant-numeric:tabular-nums}
+.timeline{display:flex;gap:12px;align-items:center;margin:0 0 14px}
+.timeline input{flex:1;accent-color:var(--b1)}
+.race{position:relative;height:calc(12 * 34px);overflow:hidden}
+.rrow{position:absolute;left:0;right:0;height:34px;display:flex;align-items:center;font-family:var(--sans);will-change:top}
+.rlab{width:clamp(120px,27%,230px);flex:none;text-align:right;padding-right:12px;font-size:14px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rtrack{flex:1;display:flex;align-items:center;min-width:0}
+.rbar{height:24px;border-radius:0 5px 5px 0;display:flex;overflow:hidden;min-width:2px}
+.rbar i{display:block;height:100%}
+.rval{font-size:13.5px;padding-left:8px;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--sans);font-size:13px;color:var(--ink2);margin:0 0 12px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.chartbox{position:relative;width:100%;height:330px}
+.callouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0;border-top:2px solid var(--ink);margin:30px 0}
+.callouts div{padding:14px 16px 6px 0;font-family:var(--sans)}
+.callouts b{display:block;font-stretch:80%;font-size:38px;font-weight:750;line-height:1.05;font-variant-numeric:tabular-nums}
+.callouts span{font-size:14px;color:var(--ink2);line-height:1.4;display:block;margin-top:4px}
+.summary{font-family:var(--sans);font-size:15.5px;line-height:1.55;background:var(--hl);border-radius:10px;padding:12px 16px;margin:0 0 18px;color:var(--ink)}
+.tablewrap{overflow-x:auto;margin-top:6px}
+table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:14px;min-width:560px}
+th{text-align:left;font-weight:500;color:var(--muted);font-size:12.5px;padding:8px 8px;border-bottom:1px solid var(--rule)}
+th.n,td.n{text-align:right;font-variant-numeric:tabular-nums}
+td{padding:9px 8px;border-bottom:1px solid var(--grid);vertical-align:middle}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:var(--bg)}
+tbody tr.sel{background:var(--hl)}
+.mix{display:flex;height:10px;border-radius:3px;overflow:hidden;width:120px;background:var(--grid)}
+.mix i{display:block;height:100%}
+.up{color:var(--b1);font-weight:600}.down{color:#C2453A;font-weight:600}
+:root[data-theme="dark"] .down{color:#F07B70}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .down{color:#F07B70}}
+sup a{font-family:var(--sans);font-size:12px;text-decoration:none;font-weight:600;padding:0 1px}
+.sources ol{padding-left:22px;font-size:16px;line-height:1.55}
+.sources li{margin-bottom:10px;word-break:break-word}
+.method{font-size:16.5px;color:var(--ink2)}
+footer{margin:80px 0 0;padding:28px 0 48px;border-top:1px solid var(--rule);font-family:var(--sans);font-size:14.5px;color:var(--ink2)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:var(--ink);font-weight:600}
+@media (max-width:640px){body{font-size:17.5px}.dek{font-size:19px}.figure{padding:16px 12px 12px;border-radius:10px;margin-left:-8px;margin-right:-8px}.race{height:calc(12 * 30px)}.rrow{height:30px}.rbar{height:20px}.rlab{font-size:12.5px}.chartbox{height:280px}}
+@media (prefers-reduced-motion:reduce){.rrow{transition:none}}
+.qgrp{margin:0 0 18px;font-family:var(--sans)}
+.qgrp .qn{font-size:14.5px;font-weight:600;margin:0 0 6px;color:var(--ink)}
+.qline{display:flex;align-items:center;gap:10px;height:26px}
+.qline .ql{width:84px;flex:none;font-size:12.5px;color:var(--muted)}
+.qline .qt{flex:1;min-width:0;display:flex;align-items:center}
+.qline .qb{height:18px;border-radius:0 4px 4px 0;transition:width .45s ease}
+.qline .qv{font-size:13px;padding-left:8px;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink)}
+.qline .qv small{color:var(--muted);font-size:12px}
+.qb.small{background-image:repeating-linear-gradient(135deg,transparent 0 4px,var(--paper) 4px 7px)!important;opacity:.75}
+.col ul li{margin-bottom:.5em}
+@media (prefers-reduced-motion:reduce){.qline .qb{transition:none}}
+
+/* medium */
+:root{--bg:#FFFFFF;--paper:#FFFFFF;--ink:#242424;--ink2:#6B6B6B;--muted:#6B6B6B;--rule:#F2F2F2;--grid:#F2F2F2;--hl:#F7F7F7;
+--b1:#1A8917;--b2:#A6D9A3;--l1:#6E56CF;--l2:#C9BEF3;--t1:#242424;--t2:#B3B3B3;
+--serif:"Source Serif 4",Charter,"Bitstream Charter","Sitka Text",Cambria,Georgia,serif;--sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121212;--paper:#121212;--ink:#E6E6E6;--ink2:#A8A8A8;--muted:#A8A8A8;--rule:#2A2A2A;--grid:#242424;--hl:#1C1C1C;--b1:#3FB33C;--b2:#1F5E1D;--l1:#9C88F0;--l2:#3F3577;--t1:#E6E6E6;--t2:#5C5C5C;}}
+:root[data-theme="dark"]{--bg:#121212;--paper:#121212;--ink:#E6E6E6;--ink2:#A8A8A8;--muted:#A8A8A8;--rule:#2A2A2A;--grid:#242424;--hl:#1C1C1C;--b1:#3FB33C;--b2:#1F5E1D;--l1:#9C88F0;--l2:#3F3577;--t1:#E6E6E6;--t2:#5C5C5C;}
+body{font-size:20px;line-height:32px;letter-spacing:-.003em;color:var(--ink)}
+.wrap{max-width:728px;padding:0 24px}
+.col{max-width:none}
+a{color:inherit;text-decoration:underline;text-decoration-thickness:1px}
+.mtop{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--rule)}
+.mtop .in{max-width:1192px;margin:0 auto;padding:0 24px;height:57px;display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-size:14px;color:var(--ink2)}
+.mtop .logo{font-family:var(--sans);font-weight:600;font-size:16px;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;color:var(--ink);text-decoration:none}
+.mtop .r{display:flex;gap:18px;align-items:center}
+.mtop .r a{text-decoration:none;color:var(--ink2)}
+.mtop .r a:hover{color:var(--ink)}
+header.top{padding:48px 0 0}
+.kicker{display:none}
+h1{font-family:var(--sans);font-stretch:normal;font-weight:700;font-size:42px;line-height:52px;letter-spacing:-.011em;margin:0 0 14px;color:var(--ink)}
+.dek{font-family:var(--sans);font-size:22px;line-height:28px;color:var(--ink2);margin:0 0 32px;letter-spacing:0}
+.byline{border:0;padding:0;margin:0 0 0;gap:12px;font-size:14px;line-height:20px;flex-wrap:nowrap;align-items:center}
+.byline .av{width:44px;height:44px;border-radius:50%;background:var(--b1);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;flex:none;text-decoration:none}
+.byline .bmeta{display:flex;flex-direction:column;gap:2px}
+.byline .brow{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.byline .bname{color:var(--ink);font-weight:500;text-decoration:none}
+.byline .follow{color:var(--b1);text-decoration:none;font-weight:500}
+.byline .follow:hover{color:var(--ink)}
+.byline .sub2{color:var(--ink2)}
+.actions{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:6px 4px;margin:28px 0 40px;font-family:var(--sans);font-size:14px;color:var(--ink2)}
+.actions .l,.actions .r{display:flex;gap:20px;align-items:center}
+.actions a{display:inline-flex;gap:6px;align-items:center;text-decoration:none;color:var(--ink2)}
+.actions a:hover{color:var(--ink)}
+.actions svg{width:20px;height:20px;fill:currentColor}
+p{margin:0 0 30px}
+h2{font-family:var(--sans);font-stretch:normal;font-weight:700;font-size:24px;line-height:30px;letter-spacing:-.016em;margin:56px 0 12px}
+h3{font-family:var(--sans);font-weight:700;font-size:20px;line-height:24px;letter-spacing:-.01em;margin:40px 0 10px}
+.col ul{font-size:20px;line-height:32px}
+.figure{background:transparent;border:0;border-radius:0;padding:0;margin:48px 0 48px}
+.figure .ttl{font-size:16px;font-weight:600}
+.figure .sub{font-size:14px;color:var(--ink2)}
+.figure .src{text-align:center;font-size:14px;line-height:20px;color:var(--ink2);margin-top:14px}
+.filters{gap:12px 18px}
+.fgroup>span,.fgroup>label{font-size:13px!important;color:var(--ink2)!important}
+.seg{border:0;background:transparent;padding:0;gap:6px}
+.seg button{border:1px solid var(--rule);border-radius:99px;padding:6px 14px;font-size:14px;color:var(--ink2);background:var(--paper)}
+.seg button:hover{color:var(--ink);border-color:var(--ink2)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);box-shadow:none;border-color:var(--ink);font-weight:500}
+select{border-radius:99px;padding:7px 32px 7px 14px;border-color:var(--rule)}
+.play{border-radius:99px;background:var(--b1);color:#fff;border-color:var(--b1);font-weight:500}
+.play:hover{filter:brightness(.92)}
+.timeline input{accent-color:var(--b1)}
+.raceyear{font-family:var(--serif);font-weight:700;font-stretch:normal;font-size:clamp(56px,10vw,88px);color:var(--ink)}
+.racetot b{font-weight:600}
+.callouts{border-top:0;border-left:3px solid var(--ink);padding-left:20px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:4px 20px;margin:40px 0}
+.callouts div{padding:6px 0}
+.callouts b{font-family:var(--serif);font-stretch:normal;font-size:30px;font-weight:700}
+.callouts span{font-family:var(--serif);font-style:italic;font-size:16px;line-height:24px}
+.summary{background:var(--hl);border-radius:4px;font-size:15px}
+table{font-size:14px}
+tbody tr.sel{background:var(--hl)}
+.up{color:var(--b1)}
+sup{line-height:0}sup a{text-decoration:none;color:var(--b1)}
+.sources ol{font-size:16px;line-height:24px}
+.method{font-size:18px;line-height:28px;color:var(--ink2)}
+.method p{margin-bottom:22px}
+footer{border-top:0;background:var(--hl);margin-top:72px;padding:40px 0 56px}
+footer .wrap{display:block}
+.author{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.author .av{width:64px;height:64px;border-radius:50%;background:var(--b1);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:22px;text-decoration:none;flex:none}
+.author .who{flex:1;min-width:200px}
+.author .who b{display:block;font-size:20px;font-weight:600;color:var(--ink);margin:4px 0 6px}
+.author .who p{font-size:14px;line-height:20px;margin:0;color:var(--ink2);font-family:var(--sans)}
+.author .btns{display:flex;gap:10px}
+.author .btns a{border-radius:99px;padding:8px 16px;font-size:14px;font-weight:500;text-decoration:none}
+.author .btns a.p{background:var(--ink);color:var(--bg)}
+.author .btns a.s{border:1px solid var(--ink);color:var(--ink)}
+@media (max-width:640px){h1{font-size:32px;line-height:38px}.dek{font-size:20px;line-height:26px}body{font-size:18px;line-height:28px}.col ul{font-size:18px;line-height:28px}.wrap{padding:0 20px}.figure{margin-left:0;margin-right:0}.mtop .r .hide{display:none}}
+
+/* paleta coolors */
+:root{--b1:#A4161A;--b2:#E5383B;--l1:#660708;--l2:#B1A7A6;--t1:#161A1D;--t2:#D3D3D3;--hl:#F5F3F4;--accent:#A4161A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--b1:#E5383B;--b2:#A4161A;--l1:#BA181B;--l2:#660708;--t1:#F5F3F4;--t2:#B1A7A6;--hl:#161A1D;--accent:#E5383B}}
+:root[data-theme="dark"]{--b1:#E5383B;--b2:#A4161A;--l1:#BA181B;--l2:#660708;--t1:#F5F3F4;--t2:#B1A7A6;--hl:#161A1D;--accent:#E5383B}
+.byline .av,.author .av{background:var(--accent)}
+.byline .follow,sup a{color:var(--accent)}
+.play{background:var(--accent);border-color:var(--accent)}
+.timeline input{accent-color:var(--accent)}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,tr:focus-visible{outline-color:var(--accent)}
+.up{color:var(--ink)}
+.down,:root[data-theme="dark"] .down{color:var(--accent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .down{color:var(--accent)}}
+</style>
+</head>
+<body>
+<nav class="mtop" aria-label="Topo"><div class="in"><a class="logo" href="#">Quem se forma no Brasil</a><div class="r"><a class="hide" href="#qualidade">Qualidade</a><a class="hide" href="#metodo">Fontes</a><a href="https://github.com/victorsoaresho" target="_blank" rel="noopener">GitHub</a></div></div></nav>
+<header class="top"><div class="wrap">
+  <p class="kicker">Educação superior em dados, 2015 a 2024</p>
+  <h1>Quem se forma no Brasil: dez anos de graduação e a virada da tecnologia</h1>
+  <p class="dek">O país forma mais gente do que há uma década, mas o diploma mudou de cara. Ele ficou mais remoto, mais curto e mais tardio. Na área de tecnologia, o número de formandos mais que dobrou. O que o Enade diz sobre a qualidade desses formandos também entra na conta.</p>
+  <div class="byline">
+    <a class="av" href="https://www.linkedin.com/in/victorsoaresho/" target="_blank" rel="noopener" aria-label="Perfil de Victor Soares no LinkedIn">VS</a>
+    <div class="bmeta">
+      <div class="brow"><a class="bname" href="https://www.linkedin.com/in/victorsoaresho/" target="_blank" rel="noopener">Victor Soares</a><a class="follow" href="https://www.linkedin.com/in/victorsoaresho/" target="_blank" rel="noopener">Seguir</a></div>
+      <div class="sub2">12 min de leitura · Dados do INEP, 2015 a 2024</div>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="l">
+      <a href="https://www.linkedin.com/in/victorsoaresho/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+      <a href="https://github.com/victorsoaresho" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.57A12 12 0 0 0 12 .3"/></svg>GitHub</a>
+    </div>
+    <div class="r"><a href="#metodo">Fontes</a></div>
+  </div>
+</div></header>
+
+<main class="wrap">
+<section class="col">
+  <p>Todo ano, o Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP) recenseia todos os cursos de graduação do país. O levantamento informa quantos alunos entraram, quantos estão matriculados e quantos concluíram cada curso. Os microdados são públicos<sup><a href="#ref1">1</a></sup>.</p>
+  <p>Esta análise reúne as dez edições mais recentes, de 2015 a 2024, e soma os concluintes de cada curso. Os cursos foram agrupados pela classificação CINE Brasil<sup><a href="#ref3">3</a></sup>, o padrão que o INEP usa para comparar formações equivalentes com nomes diferentes.</p>
+</section>
+
+<figure class="figure" id="fig1" aria-labelledby="f1t">
+  <p class="ttl" id="f1t">Os 12 cursos que mais formam, ano a ano</p>
+  <p class="sub">Cada barra mostra a composição do curso por grau acadêmico e modalidade. Use os filtros para refazer a corrida com outro recorte.</p>
+  <div class="filters">
+    <div class="fgroup"><span>Idade</span><div class="seg" data-f="r-age"><button data-v="c" aria-pressed="true">Todas</button><button data-v="j" aria-pressed="false">18 a 24 anos</button></div></div>
+    <div class="fgroup"><span>Grau</span><div class="seg" data-f="r-grau"><button data-v="BLT" aria-pressed="true">Todos</button><button data-v="B" aria-pressed="false">Bacharelado</button><button data-v="L" aria-pressed="false">Licenciatura</button><button data-v="T" aria-pressed="false">Tecnólogo</button></div></div>
+    <div class="fgroup"><span>Modalidade</span><div class="seg" data-f="r-mod"><button data-v="PE" aria-pressed="true">Todas</button><button data-v="P" aria-pressed="false">Presencial</button><button data-v="E" aria-pressed="false">EaD</button></div></div>
+  </div>
+  <div class="legend" id="raceLegend"></div>
+  <div class="racehead">
+    <div class="raceyear" id="raceYear" aria-live="polite">2015</div>
+    <div class="racetot">Total do recorte no Brasil<b id="raceTot">0</b></div>
+  </div>
+  <div class="timeline">
+    <button class="play" id="racePlay" type="button"></button>
+    <input type="range" id="raceSlider" min="0" max="900" step="1" value="0" aria-label="Ano exibido">
+  </div>
+  <div class="race" id="race" role="img" aria-label="Ranking animado dos 12 cursos de graduação com mais concluintes no Brasil a cada ano entre 2015 e 2024"></div>
+  <p class="src">Fonte: INEP, Microdados do Censo da Educação Superior 2015–2024<sup><a href="#ref1">1</a></sup>. Cursos agrupados pelo rótulo CINE Brasil<sup><a href="#ref3">3</a></sup>. Faixa de 18 a 24 anos conforme a variável QT_CONC_18_24.</p>
+</figure>
+
+<section class="col">
+  <h2>Mais diplomas, mas não entre os mais jovens</h2>
+  <p>Em 2024, 1.333.828 pessoas concluíram uma graduação no Brasil, 16% a mais que em 2015. O número de formandos com 18 a 24 anos, porém, quase não se mexeu. Foram 400,6 mil em 2015 e um pico de 467,8 mil em 2018. Em 2024, o total caiu para 427,2 mil. Assim, a participação dos jovens no total de formandos encolheu, porque o crescimento veio de quem se forma mais tarde.</p>
+  <p>Direito lidera durante toda a década. Abaixo dele, o ranking se reorganiza. Administração, que disputava o primeiro lugar entre os jovens em 2015, perdeu quase metade dos formandos dessa faixa etária. Já Psicologia, Enfermagem, Odontologia e Sistemas de informação subiram de forma consistente.</p>
+  <p>A mudança mais estrutural, no entanto, não aparece em nenhum curso específico. Ela está na forma de estudar.</p>
+</section>
+
+<div class="callouts">
+  <div><b>45,3%</b><span>dos formandos de 2024 estudaram a distância. Em 2015, eram 20,3%.</span></div>
+  <div><b>−20%</b><span>de queda nos formandos de cursos presenciais entre 2015 e 2024.</span></div>
+  <div><b>+54%</b><span>de crescimento nos formandos de cursos tecnólogos, que têm duração mais curta.</span></div>
+  <div><b>427 mil</b><span>formandos de 18 a 24 anos em 2024, abaixo do pico de 2018.</span></div>
+</div>
+
+<figure class="figure" id="fig2" aria-labelledby="f2t">
+  <p class="ttl" id="f2t">Formandos por modalidade, 2015 a 2024</p>
+  <p class="sub">Total de concluintes de graduação no Brasil, com a separação entre presencial e EaD.</p>
+  <div class="filters">
+    <div class="fgroup"><span>Idade</span><div class="seg" data-f="m-age"><button data-v="c" aria-pressed="true">Todas</button><button data-v="j" aria-pressed="false">18 a 24 anos</button></div></div>
+    <div class="fgroup"><span>Grau</span><div class="seg" data-f="m-grau"><button data-v="BLT" aria-pressed="true">Todos</button><button data-v="B" aria-pressed="false">Bacharelado</button><button data-v="L" aria-pressed="false">Licenciatura</button><button data-v="T" aria-pressed="false">Tecnólogo</button></div></div>
+    <div class="fgroup"><span>Escala</span><div class="seg" data-f="m-scale"><button data-v="abs" aria-pressed="true">Quantidade</button><button data-v="pct" aria-pressed="false">Participação %</button></div></div>
+  </div>
+  <div class="legend" id="modLegend"></div>
+  <div class="chartbox"><canvas id="modChart" role="img" aria-label="Barras empilhadas com os concluintes presenciais e EaD por ano de 2015 a 2024"></canvas></div>
+  <p class="src">Fonte: INEP, Microdados do Censo da Educação Superior 2015–2024<sup><a href="#ref1">1</a></sup>. Cursos de graduação, todas as áreas.</p>
+</figure>
+
+<section class="col">
+  <p>Os formandos de cursos presenciais caíram de 916 mil para 729 mil em dez anos. No mesmo período, os de EaD passaram de 234 mil para 605 mil. Entre os jovens de 18 a 24 anos, o presencial ainda domina, mas a fatia do EaD triplicou, de 6,8% para 22,7%.</p>
+  <p>A expansão do EaD acelerou a partir de 2020 e veio sobretudo pelos cursos tecnólogos. Essas são graduações de dois a três anos, focadas em uma ocupação. Esse é exatamente o formato que explica a virada na área de tecnologia.</p>
+
+  <h2>Tecnologia: o diploma que mais cresceu</h2>
+  <p>Para esta seção, considerei como "cursos de tecnologia" a área geral da CINE Brasil chamada Computação e Tecnologias da Informação e Comunicação (TIC)<sup><a href="#ref3">3</a></sup>. O recorte inclui Sistemas de informação (rótulo que abrange Análise e Desenvolvimento de Sistemas), Ciência da computação, Engenharia de software, Ciência de dados, Redes, Segurança da informação e outros cursos.</p>
+  <p>Entre 2015 e 2019, a área formava cerca de 44 mil pessoas por ano, sem crescimento. A partir de 2020 a curva muda de inclinação, e em 2024 foram 100.488 formandos. Em cinco anos, o número mais que dobrou.</p>
+</section>
+
+<div class="callouts">
+  <div><b>+127%</b><span>de formandos em TIC entre 2015 e 2024, de 44,2 mil para 100,5 mil.</span></div>
+  <div><b>8,4x</b><span>foi quanto cresceu o tecnólogo EaD, de 6,5 mil para 54,8 mil formandos.</span></div>
+  <div><b>−6%</b><span>foi a variação do bacharelado presencial, que ficou estável em torno de 16 mil.</span></div>
+  <div><b>489 mil</b><span>pessoas ingressaram em cursos de TIC em 2024, 3,5 vezes mais que em 2015.</span></div>
+</div>
+
+<figure class="figure" id="fig3" aria-labelledby="f3t">
+  <p class="ttl" id="f3t">Explore os cursos de tecnologia</p>
+  <p class="sub">Combine os filtros ou clique em um curso na tabela para isolá-lo no gráfico.</p>
+  <div class="filters">
+    <div class="fgroup"><span>Indicador</span><div class="seg" data-f="t-met"><button data-v="c" aria-pressed="true">Formandos</button><button data-v="j" aria-pressed="false">Formandos 18 a 24</button><button data-v="i" aria-pressed="false">Ingressantes</button></div></div>
+    <div class="fgroup"><span>Grau</span><div class="seg" data-f="t-grau"><button data-v="BT" aria-pressed="true">Todos</button><button data-v="B" aria-pressed="false">Bacharelado</button><button data-v="T" aria-pressed="false">Tecnólogo</button></div></div>
+    <div class="fgroup"><span>Modalidade</span><div class="seg" data-f="t-mod"><button data-v="PE" aria-pressed="true">Todas</button><button data-v="P" aria-pressed="false">Presencial</button><button data-v="E" aria-pressed="false">EaD</button></div></div>
+    <div class="fgroup"><label for="tCourse" style="font-size:12.5px;color:var(--muted);font-weight:500">Curso</label><select id="tCourse"><option value="">Todos os cursos de TIC</option></select></div>
+  </div>
+  <div class="summary" id="tSummary" aria-live="polite"></div>
+  <div class="legend" id="tLegend"></div>
+  <div class="chartbox"><canvas id="tChart" role="img" aria-label="Barras empilhadas por ano dos cursos de TIC segundo grau e modalidade"></canvas></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin:26px 0 4px;font-family:var(--sans)">
+    <span style="font-weight:650;font-size:16px">Ranking de cursos</span>
+    <label style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center">Comparar 2015 com <select id="tYear"></select></label>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Curso</th><th class="n">2015</th><th class="n" id="thYear">2024</th><th class="n">Variação</th><th>Composição</th></tr></thead>
+    <tbody id="tBody"></tbody>
+  </table></div>
+  <p class="src">Fonte: INEP, Microdados do Censo da Educação Superior 2015–2024<sup><a href="#ref1">1</a></sup>. Área geral CINE 06, Computação e TIC<sup><a href="#ref3">3</a></sup>. Não há licenciaturas nessa área, porque o INEP classifica a Licenciatura em computação na área de Educação.</p>
+</figure>
+
+<section class="col">
+  <h3>O tecnólogo a distância puxou quase todo o crescimento</h3>
+  <p>De cada 100 novos formandos em TIC entre 2015 e 2024, cerca de 86 vieram de cursos tecnólogos EaD. O bacharelado presencial, formato clássico de Ciência da computação e das engenharias, terminou a década praticamente no mesmo patamar. Foram 16,7 mil formandos em 2015 e 15,6 mil em 2024. Em 2015, 15,5% dos formados em TIC estudaram a distância. Em 2024, a fatia chegou a 61,9%.</p>
+  <h3>Sistemas de informação concentra a área</h3>
+  <p>O rótulo Sistemas de informação passou de 23,7 mil para 61,8 mil formandos e responde por seis de cada dez diplomas de TIC. Ele inclui Análise e Desenvolvimento de Sistemas, o tecnólogo mais procurado do país, e por isso a maior parte dos formandos vem do EaD. Ciência da computação segue outro perfil, quase todo de bacharelado e com predomínio do presencial.</p>
+  <h3>Novas formações aparecem no mapa</h3>
+  <p>Engenharia de software saiu de 172 para 3.081 formandos e é o único curso grande dividido quase igualmente entre presencial e EaD. Ciência de dados e Defesa cibernética nem existiam na classificação em 2015 e já formam mais de mil pessoas por ano cada. Inteligência artificial e Internet das coisas surgem nas edições mais recentes com números ainda pequenos. Segurança da informação cresceu cinco vezes.</p>
+  <h3>O funil indica mais formandos nos próximos anos</h3>
+  <p>Os ingressantes em TIC saltaram de 141 mil em 2015 para 489 mil em 2024, e 72% deles entraram em cursos EaD. Se uma fração dessas turmas concluir, a curva de formandos continuará subindo. A diferença entre quem entra e quem se forma, porém, é grande. Parte disso se explica pelo tempo de curso, e parte pela evasão, historicamente alta em TI e no ensino a distância. Esse é o principal ponto de atenção para quem lê esses números como oferta de profissionais.</p>
+
+</section>
+
+<section class="col">
+  <h2 id="qualidade">E a qualidade de quem se forma?</h2>
+  <p>Contar diplomas não diz quanto os formandos aprenderam. O indicador oficial mais próximo disso é o Exame Nacional de Desempenho dos Estudantes (Enade). A prova é obrigatória para concluintes e avalia o conteúdo específico do curso e uma parte de formação geral. Com base no resultado, o INEP atribui a cada curso um Conceito Enade de 1 a 5<sup><a href="#ref5">5</a></sup>.</p>
+  <p>Os cursos de tecnologia são avaliados a cada três anos. A edição mais recente com resultados publicados é a de 2021<sup><a href="#ref6">6</a></sup>. A seguinte é a de 2026, cujos resultados ainda não saíram<sup><a href="#ref9">9</a></sup>. Comparei também com 2017<sup><a href="#ref7">7</a></sup>, a edição anterior à grande expansão do EaD. Entram na comparação os cinco cursos de TIC avaliados nas duas edições: Ciência da computação, Sistemas de informação, Análise e Desenvolvimento de Sistemas, Gestão da TI e Redes de computadores.</p>
+</section>
+
+<div class="callouts">
+  <div><b>30,5 x 35,2</b><span>foi a nota média dos concluintes de TIC no Enade 2021, de 0 a 100. O primeiro número é do EaD e o segundo, do presencial.</span></div>
+  <div><b>8,9%</b><span>dos alunos de EaD estavam em cursos com conceito 4 ou 5. No presencial, eram 28,7%.</span></div>
+  <div><b>1,5 ponto</b><span>é a diferença entre presencial e EaD quando se compara apenas faculdades privadas.</span></div>
+  <div><b>54% x 75%</b><span>foi a taxa de comparecimento à prova. O primeiro número é do EaD e o segundo, do presencial.</span></div>
+</div>
+
+<figure class="figure" id="fig4" aria-labelledby="f4t">
+  <p class="ttl" id="f4t">Desempenho no Enade: presencial x EaD nos cursos de TIC</p>
+  <p class="sub">Médias ponderadas pelo número de concluintes que fizeram a prova em cada curso. Barras tracejadas indicam menos de 100 participantes, uma amostra pequena demais para conclusões.</p>
+  <div class="filters">
+    <div class="fgroup"><span>Edição</span><div class="seg" data-f="q-ed"><button data-v="2021" aria-pressed="true">2021</button><button data-v="2017" aria-pressed="false">2017</button></div></div>
+    <div class="fgroup"><span>Rede</span><div class="seg" data-f="q-rede"><button data-v="all" aria-pressed="true">Todas</button><button data-v="pub" aria-pressed="false">Públicas</button><button data-v="priv" aria-pressed="false">Privadas</button></div></div>
+    <div class="fgroup"><span>Agrupar por</span><div class="seg" data-f="q-by"><button data-v="area" aria-pressed="true">Curso</button><button data-v="grau" aria-pressed="false">Grau</button></div></div>
+    <div class="fgroup"><label for="qMet" style="font-size:12.5px;color:var(--muted);font-weight:500">Indicador</label><select id="qMet">
+      <option value="geral">Nota geral (0 a 100)</option>
+      <option value="ce">Nota em conhecimento específico</option>
+      <option value="fg">Nota em formação geral</option>
+      <option value="high">% de alunos em cursos com conceito 4 ou 5</option>
+      <option value="low">% de alunos em cursos com conceito 1 ou 2</option>
+      <option value="taxa">Taxa de comparecimento à prova</option>
+    </select></div>
+  </div>
+  <div class="summary" id="qSummary" aria-live="polite"></div>
+  <div class="legend"><span><i style="background:var(--b1)"></i>Presencial</span><span><i style="background:var(--t1)"></i>EaD</span></div>
+  <div id="qChart" role="img" aria-label="Barras comparando o desempenho no Enade de cursos presenciais e EaD na área de TIC"></div>
+  <p class="src">Fonte: INEP, Conceito Enade 2021 e 2017<sup><a href="#ref6">6</a>,<a href="#ref7">7</a></sup>. Nota geral = 25% de formação geral + 75% de conhecimento específico, como no cálculo oficial. As notas só são comparáveis dentro da mesma edição e da mesma área, porque cada prova é diferente.</p>
+</figure>
+
+<section class="col">
+  <h3>A diferença existe, mas o EaD não explica tudo sozinho</h3>
+  <p>No agregado, o EaD sai atrás. Em 2021, a nota média dos concluintes de TIC a distância foi 4,7 pontos menor que a do presencial. Além disso, só 8,9% desses alunos estavam em cursos bem avaliados (conceito 4 ou 5), contra 28,7% no presencial. Em Sistemas de informação, a distância é a maior: 72,7% dos alunos de EaD estavam em cursos com conceito 1 ou 2.</p>
+  <p>Ao filtrar a rede, o quadro muda. Quase todo o EaD de tecnologia é privado, enquanto o presencial mistura universidades públicas e faculdades privadas. As públicas presenciais tiveram nota 39,7, enquanto as privadas presenciais ficaram em 32,0, muito mais perto do EaD (30,5). Comparando só faculdades privadas, Análise e Desenvolvimento de Sistemas empata (28,1 nas duas modalidades) e Gestão da TI a distância supera a presencial. Em outras palavras, boa parte da diferença atribuída ao EaD é, na verdade, a diferença entre universidades públicas e o restante do sistema.</p>
+  <h3>O grau pesa tanto quanto a modalidade</h3>
+  <p>Os tecnólogos têm notas menores que os bacharelados, mesmo no presencial. Em 2021, foram 31,6 contra 37,6. Como a explosão de formandos de TIC veio justamente do tecnólogo a distância, a fatia de profissionais vindos dos cursos com notas mais baixas cresceu. Isso não significa que cada curso piorou. Significa que a composição de quem se forma mudou.</p>
+  <h3>A distância aumentou entre 2017 e 2021</h3>
+  <p>Em 2017, a diferença entre presencial e EaD era de 1,5 ponto e, entre as privadas, o EaD chegava a ficar à frente. Em 2021, a distância geral subiu para 4,7 pontos. As notas absolutas das duas edições não se comparam, porque as provas são diferentes. A posição relativa, porém, piorou para o EaD justamente no período em que ele mais cresceu.</p>
+  <h3>Cuidados na leitura</h3>
+  <p>Há quatro ressalvas importantes:</p>
+  <ul style="margin:0 0 1.1em;padding-left:22px">
+    <li><b>Comparecimento.</b> Em 2021, só 54% dos inscritos de EaD fizeram a prova, contra 75% no presencial. Se quem faltou tende a ser o aluno menos preparado, a nota do EaD pode estar até superestimada.</li>
+    <li><b>Pandemia.</b> A edição de 2021 foi aplicada durante a pandemia, quando até os cursos presenciais funcionavam de forma remota.</li>
+    <li><b>Valor agregado.</b> O indicador oficial que mede quanto o curso acrescenta em relação ao Enem de entrada (IDD) existe<sup><a href="#ref8">8</a></sup>. No EaD, porém, só 30% dos participantes puderam ser vinculados ao Enem, contra 78% no presencial. Por isso, não usei o IDD como base da comparação.</li>
+    <li><b>Correlação.</b> O Enade mede o desempenho no fim do curso, não a empregabilidade, e diferenças de perfil dos alunos, como idade e jornada de trabalho, pesam no resultado.</li>
+  </ul>
+  <p>A leitura mais justa, portanto, é esta: o diploma de tecnologia ficou mais acessível e muito mais numeroso, mas a média de desempenho de quem se forma tende a cair, porque o crescimento veio dos formatos com resultados mais baixos. A modalidade sozinha não define a qualidade. Escolher a instituição continua sendo decisivo.</p>
+
+  <h2 id="metodo">Metodologia e fontes</h2>
+  <div class="method">
+    <p>Todos os números vêm dos arquivos MICRODADOS_CADASTRO_CURSOS de cada edição do Censo da Educação Superior, de 2015 a 2024<sup><a href="#ref1">1</a>,<a href="#ref2">2</a></sup>. A edição de 2024 é a mais recente publicada<sup><a href="#ref4">4</a></sup>. Considerei apenas cursos de graduação (TP_NIVEL_ACADEMICO = 1).</p>
+    <p>As variáveis usadas foram QT_CONC para concluintes, QT_CONC_18_24 para concluintes de 18 a 24 anos e QT_ING para ingressantes. O grau acadêmico vem de TP_GRAU_ACADEMICO: os códigos 1 e 4 foram tratados como bacharelado, 2 como licenciatura e 3 como tecnólogo. A modalidade vem de TP_MODALIDADE_ENSINO, onde 1 é presencial e 2 é EaD. Os cursos foram agrupados por NO_CINE_ROTULO. A área de tecnologia corresponde a CO_CINE_AREA_GERAL = 06.</p>
+    <p>Os totais anuais conferem com os números divulgados pelo INEP. Por exemplo, foram 1.250.076 concluintes em 2019 e 1.333.828 em 2024. Na figura 1, a lista de cursos inclui todo curso que esteve entre os 12 primeiros em algum ano e em algum recorte de filtro. O total exibido considera todos os cursos do país.</p>
+    <p>Em 2024, a CINE Brasil deixou de classificar Engenharia de computação na área de TIC e passou a agrupá-la nas engenharias. Em 2023, eram cerca de 1,5 mil formandos nessa categoria dentro de TIC. Por isso, o total da área em 2024 está levemente subestimado em comparação com os anos anteriores, o que torna o crescimento observado ainda mais conservador.</p>
+    <p>Para a seção de qualidade, usei as planilhas oficiais do Conceito Enade 2021 e 2017<sup><a href="#ref6">6</a>,<a href="#ref7">7</a></sup>, filtrando as áreas de Ciência da computação (bacharelado), Sistemas de informação e os tecnólogos em Análise e Desenvolvimento de Sistemas, Gestão da TI e Redes de computadores. As notas brutas de formação geral e de conhecimento específico de cada curso foram combinadas com os pesos oficiais (25% e 75%) e ponderadas pelo número de concluintes participantes. A proporção de alunos por faixa de conceito considera apenas cursos com conceito calculado, excluindo os "sem conceito". O IDD foi consultado na planilha oficial de 2021<sup><a href="#ref8">8</a></sup>. Engenharia de computação ficou de fora porque é avaliada em outro ano do ciclo.</p>
+  </div>
+  <div class="sources">
+    <ol>
+      <li id="ref1">INEP. Microdados do Censo da Educação Superior. Brasília: Ministério da Educação. <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior" target="_blank" rel="noopener">gov.br/inep/.../microdados/censo-da-educacao-superior</a></li>
+      <li id="ref2">INEP. Arquivos de microdados 2015 a 2024, no formato <code>microdados_censo_da_educacao_superior_AAAA.zip</code>. Exemplo, edição 2024: <a href="https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2024.zip" target="_blank" rel="noopener">download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2024.zip</a></li>
+      <li id="ref3">INEP. Classificação Internacional Normalizada da Educação adaptada para cursos de graduação e sequenciais (CINE Brasil). <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/cine-brasil" target="_blank" rel="noopener">gov.br/inep/.../cine-brasil</a></li>
+      <li id="ref4">INEP/MEC. Censo da Educação Superior 2024: divulgação dos resultados. Brasília, setembro de 2025. <a href="https://download.inep.gov.br/educacao_superior/censo_superior/documentos/2024/apresentacao_censo_da_educacao_superior_2024.pdf" target="_blank" rel="noopener">Apresentação em PDF</a></li>
+      <li id="ref5">INEP. Indicadores de Qualidade da Educação Superior. <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/indicadores-de-qualidade-da-educacao-superior" target="_blank" rel="noopener">gov.br/inep/.../indicadores-de-qualidade-da-educacao-superior</a></li>
+      <li id="ref6">INEP. Conceito Enade 2021, planilha de divulgação. <a href="https://download.inep.gov.br/educacao_superior/indicadores/resultados/2021/conceito_enade_2021.xlsx" target="_blank" rel="noopener">conceito_enade_2021.xlsx</a></li>
+      <li id="ref7">INEP. Conceito Enade 2017, planilha de divulgação. <a href="https://download.inep.gov.br/educacao_superior/indicadores/legislacao/2018/resultados_conceito_enade_2017.xlsx" target="_blank" rel="noopener">resultados_conceito_enade_2017.xlsx</a></li>
+      <li id="ref8">INEP. Indicador de Diferença entre os Desempenhos Observado e Esperado (IDD) 2021. <a href="https://download.inep.gov.br/educacao_superior/indicadores/resultados/2021/IDD_2021.xlsx" target="_blank" rel="noopener">IDD_2021.xlsx</a></li>
+      <li id="ref9">MEC. Portaria nº 276, de 27 de março de 2026, que define as áreas avaliadas no Enade 2026. <a href="https://mecnormas.mec.gov.br/pesquisa/detalhar/9174" target="_blank" rel="noopener">mecnormas.mec.gov.br</a></li>
+    </ol>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div class="author">
+    <a class="av" href="https://www.linkedin.com/in/victorsoaresho/" target="_blank" rel="noopener" aria-label="Perfil de Victor Soares no LinkedIn">VS</a>
+    <div class="who"><span style="font-family:var(--sans);font-size:14px;color:var(--ink2)">Escrito por</span><b>Victor Soares</b><p>Análise, texto e visualizações feitos com dados abertos do INEP e do MEC.</p></div>
+    <div class="btns"><a class="p" href="https://www.linkedin.com/in/victorsoaresho/" target="_blank" rel="noopener">LinkedIn</a><a class="s" href="https://github.com/victorsoaresho" target="_blank" rel="noopener">GitHub</a></div>
+  </div>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const DATA={"years":[2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"genTot":{"c":{"BP":[620513,656043,687076,742654,705399,677984,657383,641571,630163,580847],"BE":[60152,59444,62638,59144,67191,87499,104797,113234,164159,190859],"LP":[152382,149046,145258,133070,120524,94816,93850,91638,85129,71726],"LE":[85436,89873,107798,117383,133483,148463,189711,165943,147369,133971],"TP":[143468,133643,115272,114691,108114,105429,90814,70413,68093,76513],"TE":[88116,81400,81727,97346,115365,164431,190633,204657,279756,279912]},"j":{"BP":[268923,282638,302601,327947,316957,310552,305047,295359,288540,260369],"BE":[7388,8119,8829,8655,9809,12666,14833,14757,24200,26691],"LP":[49181,49452,51435,50960,49520,40569,40928,37938,33514,28534],"LE":[8693,9925,13424,14869,17116,18893,25355,21462,18184,13553],"TP":[55282,52644,49434,51306,49702,50322,44548,33816,34267,41401],"TE":[11145,10564,11397,14030,16741,26106,30871,34024,53043,56664]}},"gen":{"Administração":{"c":{"BP":[99084,93285,85833,78631,65960,59963,50779,46761,40284,30607],"BE":[25770,24799,26312,24711,25977,31008,34648,32988,49892,46331]},"j":{"BP":[40350,38344,36367,33850,29773,28521,24846,22991,20450,15400],"BE":[3612,4080,4561,4530,4795,5694,6565,5961,9737,8746]}},"Administração pública":{"c":{"BP":[495,864,593,742,696,715,619,732,774,738],"BE":[1973,2555,2207,1640,865,1427,2123,1431,916,860],"TE":[7,3,1,0,0,0,0,0,0,0]},"j":{"BP":[314,364,362,403,404,387,323,354,371,331],"BE":[136,260,172,150,72,123,204,79,61,54]}},"Agronomia":{"c":{"BP":[8554,9631,10366,11610,12253,10833,11726,12342,12019,11467],"BE":[0,0,0,0,0,35,34,855,837,3294],"TE":[0,0,0,0,0,0,0,0,0,78]},"j":{"BP":[4506,5002,5392,6136,6379,5421,5792,5916,5747,5382],"BE":[0,0,0,0,0,5,7,127,110,450],"TE":[0,0,0,0,0,0,0,0,0,13]}},"Arquitetura e urbanismo":{"c":{"BP":[12420,15482,18619,22639,23753,23206,19148,17920,16281,14493],"BE":[0,0,0,0,0,10,162,168,256,556],"TE":[0,0,0,0,0,0,0,0,0,54]},"j":{"BP":[6200,8018,9732,11604,12070,11921,9653,8786,7959,6833],"BE":[0,0,0,0,0,0,19,21,23,67],"TE":[0,0,0,0,0,0,0,0,0,5]}},"Artes visuais formação de professor":{"c":{"LP":[1667,1760,1607,1558,1324,1073,983,1064,1008,907],"LE":[1789,1130,2567,2206,2623,3171,3201,2702,3017,3296]},"j":{"LP":[474,535,538,594,482,352,374,293,333,337],"LE":[161,74,259,247,224,206,231,188,218,221]}},"Biblioteconomia":{"c":{"BP":[1144,1213,1176,1171,1039,624,897,834,907,933],"BE":[0,39,59,138,388,486,1919,4258,2019,1698]},"j":{"BP":[339,391,363,376,361,227,326,280,288,313],"BE":[0,2,6,4,17,23,42,37,34,84]}},"Biologia formação de professor":{"c":{"LP":[11514,9976,10161,8889,8667,6300,6590,7087,6482,6354],"LE":[2230,2687,2554,2930,2759,3663,4026,3021,3203,2970]},"j":{"LP":[5200,4681,4826,4475,4521,3363,3499,3574,3006,2973],"LE":[277,468,363,437,395,468,461,327,368,361]}},"Biomedicina":{"c":{"BP":[7004,7675,8989,11061,10383,10620,13042,14445,14563,13275],"BE":[0,0,0,0,25,47,292,849,2936,6740]},"j":{"BP":[4287,4656,5522,6559,6488,6435,7477,8306,8508,8058],"BE":[0,0,0,0,8,23,49,169,396,928]}},"Ciência da computação":{"c":{"BP":[5751,6415,6229,6580,6342,6619,6574,6815,8056,7993],"BE":[0,0,0,0,0,0,29,309,1679,2531],"TP":[129,123,92,77,84,64,64,59,76,83]},"j":{"BP":[2840,3120,3190,3600,3615,3889,3957,3969,4924,4778],"BE":[0,0,0,0,0,0,2,76,535,859],"TP":[53,59,41,32,36,35,26,24,38,52]}},"Ciências aeronáuticas":{"c":{"BP":[401,891,540,683,417,449,472,449,359,292],"BE":[58,100,84,126,133,197,64,228,423,503],"TP":[110,159,192,165,175,118,130,69,53,47],"TE":[0,0,0,0,0,0,0,0,1,13]},"j":{"BP":[255,590,392,424,296,302,341,329,245,208],"BE":[8,11,13,20,30,48,15,42,90,102],"TP":[59,97,113,94,107,80,84,37,38,37],"TE":[0,0,0,0,0,0,0,0,0,2]}},"Ciências militares":{"c":{"BP":[34,99,69,63,519,510,799,250,978,590],"TP":[0,0,0,0,0,0,1006,983,870,935]},"j":{"BP":[12,17,22,16,316,308,256,24,403,250],"TP":[0,0,0,0,0,0,841,805,732,753]}},"Ciências naturais formação de professor":{"c":{"LP":[1455,1425,1065,1227,1110,599,703,846,743,821],"LE":[101,134,145,117,41,16,156,115,73,150]},"j":{"LP":[568,576,396,472,479,257,377,293,258,249],"LE":[7,4,11,13,2,0,13,4,21,4]}},"Ciências sociais formação de professor":{"c":{"BE":[3,0,0,0,0,0,0,0,0,0],"LP":[1575,1737,1488,1457,1478,913,1177,1198,1378,1218],"LE":[597,566,921,753,1006,1120,1125,934,901,987]},"j":{"BE":[1,0,0,0,0,0,0,0,0,0],"LP":[445,459,523,533,616,425,517,461,500,469],"LE":[28,25,61,46,57,62,56,35,50,41]}},"Computação formação de professor":{"c":{"LP":[725,677,671,463,518,395,275,359,370,441],"LE":[752,590,410,519,268,583,1054,634,595,480]},"j":{"LP":[207,159,134,127,148,77,78,104,120,98],"LE":[100,49,44,67,34,68,57,38,18,27]}},"Comércio exterior":{"c":{"BP":[540,556,410,427,467,291,252,336,309,237],"BE":[0,0,0,0,0,0,0,0,0,2],"TP":[2525,2075,1821,1772,1528,1843,1428,1105,984,975],"TE":[553,728,760,1003,1404,2117,2296,2146,3109,2943]},"j":{"BP":[356,340,267,287,298,166,154,216,211,157],"BE":[0,0,0,0,0,0,0,0,0,2],"TP":[1345,1183,1056,1111,932,1220,965,663,653,684],"TE":[78,97,111,201,275,478,612,557,958,951]}},"Contabilidade":{"c":{"BP":[42453,42718,42106,40339,34425,33049,28256,25820,21379,15972],"BE":[12306,12550,13190,12932,15522,19748,22116,19824,28185,25857]},"j":{"BP":[16436,16557,17105,16424,14834,15291,13538,12434,10463,7430],"BE":[1873,2177,2289,2207,2635,3272,3452,2952,4735,4079]}},"Design de interiores":{"c":{"BP":[185,133,145,147,147,86,79,66,56,54],"TP":[3491,3300,3052,2973,2521,2294,1617,1246,989,884],"TE":[0,1,103,625,975,1417,1710,2669,4425,3229]},"j":{"BP":[116,77,86,99,80,38,42,29,22,25],"TP":[1658,1621,1660,1578,1310,1119,781,583,445,418],"TE":[0,0,14,141,177,293,327,508,983,754]}},"Design gráfico":{"c":{"BP":[628,868,760,1048,767,657,586,647,648,732],"TP":[2774,2586,2875,3102,3252,3325,3103,2407,2818,3142],"TE":[0,0,0,0,62,438,876,1655,4619,4200]},"j":{"BP":[422,577,543,713,566,491,433,439,465,553],"TP":[1706,1577,1868,2015,2250,2283,2200,1615,2055,2407],"TE":[0,0,0,0,17,131,299,582,2092,1848]}},"Direito":{"c":{"BP":[105317,107742,113713,126109,121195,124438,115239,111937,111525,98326],"BE":[7,167,151,67,20,25,0,0,7,0]},"j":{"BP":[44566,44539,48793,53814,53356,56128,54641,52727,51835,44244]}},"Economia":{"c":{"BP":[6181,5577,5649,5675,5270,5155,5091,5314,6019,5604],"BE":[49,70,131,167,281,530,741,887,1889,2493]},"j":{"BP":[2987,2786,2775,2964,2764,2801,2866,3032,3467,3174],"BE":[2,3,12,14,24,53,85,102,307,485]}},"Educação especial formação de professor":{"c":{"LP":[143,115,110,66,71,14,93,65,56,115],"LE":[42,10,64,2124,6832,2090,949,1853,1834,1909]},"j":{"LP":[32,30,34,30,34,9,46,31,25,35],"LE":[3,0,2,24,64,60,43,66,79,53]}},"Educação física":{"c":{"BP":[14017,15497,19517,23144,21597,20716,19274,17002,15935,11333],"BE":[502,1258,1532,3774,6288,10218,13259,14392,19418,21121],"TE":[0,0,0,0,0,0,0,0,0,4]},"j":{"BP":[5732,6126,7539,9217,8747,8483,8343,7524,6941,4788],"BE":[53,126,156,508,727,1409,1751,1858,2694,2595]}},"Educação física formação de professor":{"c":{"BP":[0,0,0,0,1,11,0,0,0,0],"LP":[21013,21116,21835,20379,16212,11888,10187,8412,6912,5208],"LE":[926,1217,12499,12455,13752,7823,11935,9690,9345,7371]},"j":{"BP":[0,0,0,0,0,3,0,0,0,0],"LP":[9295,9412,10117,9849,7865,5636,4964,3822,3150,2255],"LE":[117,160,2814,3261,3588,1883,2461,2042,1975,1074]}},"Enfermagem":{"c":{"BP":[34556,35077,37209,42159,41015,39387,45214,46226,45927,43101],"BE":[159,67,127,94,249,1332,2884,5122,7383,11369],"TE":[0,0,0,0,0,0,0,0,1,6]},"j":{"BP":[11286,10950,11966,13662,14880,15383,18877,19387,19441,17163],"BE":[27,8,24,10,22,145,431,807,1382,1701]}},"Engenharia ambiental":{"c":{"BP":[3131,3065,3240,3479,3071,2570,2039,1652,1486,1200],"BE":[214,243,219,301,295,415,543,574,592,697]},"j":{"BP":[1428,1368,1391,1475,1197,923,746,516,450,387],"BE":[3,8,7,5,9,6,23,15,13,13]}},"Engenharia civil":{"c":{"BP":[25525,35479,43512,49121,47510,43227,35779,28720,22737,17305],"BE":[81,77,219,824,1269,2105,2681,3163,3764,5345]},"j":{"BP":[11467,15766,19538,21798,20782,18417,14759,11319,8676,6565],"BE":[1,1,18,65,78,175,197,215,242,354]}},"Engenharia de produção":{"c":{"BP":[14156,16449,17998,20039,19633,17543,14343,12403,10736,8958],"BE":[449,589,727,987,1505,2294,2604,3499,5507,5177]},"j":{"BP":[4945,5680,6603,7367,7049,6229,5203,4496,4013,3539],"BE":[25,19,54,37,96,106,146,157,179,248]}},"Engenharia elétrica":{"c":{"BP":[7685,8942,9637,11164,11602,11151,9979,9279,8455,7098],"BE":[50,32,74,281,182,664,1244,1657,2541,4064]},"j":{"BP":[2339,2646,2973,3500,3455,3271,2918,2761,2457,2136],"BE":[3,0,1,3,4,12,29,50,85,153]}},"Estética e cosmética":{"c":{"BP":[240,626,729,714,674,615,508,628,421,334],"BE":[0,0,0,0,0,0,0,0,0,16],"TP":[5517,5569,5363,5879,7567,8047,7950,7191,5376,6037],"TE":[2189,3286,2359,1810,1885,2508,3788,4788,6320,7352]},"j":{"BP":[111,326,401,401,405,345,297,354,243,185],"BE":[0,0,0,0,0,0,0,0,0,14],"TP":[2720,2817,2856,3133,4131,4321,4365,3942,2970,3311],"TE":[447,715,640,513,579,654,800,1041,1305,1626]}},"Farmácia":{"c":{"BP":[14540,14327,15786,17742,17329,19056,22974,22382,21559,19683],"BE":[0,0,0,0,0,1,82,1113,1802,4461],"TP":[0,0,0,1,0,0,0,0,0,0]},"j":{"BP":[6014,5617,6168,6659,6472,7131,8710,8610,8706,7723],"BE":[0,0,0,0,0,0,7,43,114,375]}},"Filosofia":{"c":{"BP":[861,843,866,955,1054,954,1034,887,1042,869],"BE":[75,50,53,39,83,87,126,195,273,432]},"j":{"BP":[246,231,266,360,387,418,385,384,376,322],"BE":[2,1,3,0,17,17,20,33,26,38]}},"Filosofia formação de professor":{"c":{"LP":[1797,1746,1831,1602,1403,1026,1211,1164,1147,1018],"LE":[726,816,785,1264,901,1612,1774,1276,1395,1499]},"j":{"LP":[533,536,583,545,509,394,447,403,387,332],"LE":[32,90,71,136,60,126,140,112,128,101]}},"Fisioterapia":{"c":{"BP":[14505,15326,17116,21518,22266,22419,26281,26130,24401,22131],"BE":[0,0,0,0,0,0,14,176,739,2294]},"j":{"BP":[7558,7932,9266,11136,11520,11681,13935,13762,12648,11226],"BE":[0,0,0,0,0,0,8,66,160,448]}},"Formação pedagógica de professor para a educação básica":{"c":{"LP":[422,449,541,284,495,136,298,162,144,128],"LE":[314,257,704,1275,1288,767,530,201,132,182]},"j":{"LP":[25,20,17,19,14,0,5,1,3,2],"LE":[13,10,27,60,45,30,15,7,1,4]}},"Física formação de professor":{"c":{"LP":[1548,1589,1986,1730,1831,1619,1541,1752,1973,1697],"LE":[372,449,543,802,628,717,813,635,746,763]},"j":{"LP":[559,600,712,722,869,655,717,777,790,695],"LE":[35,25,57,67,35,30,70,47,58,54]}},"Gastronomia":{"c":{"BP":[138,199,203,203,220,139,172,97,164,243],"TP":[5837,6888,6158,6981,5793,5190,4195,3620,3618,3350],"TE":[40,68,397,535,959,1653,1715,2440,3719,2958]},"j":{"BP":[68,84,100,88,90,55,85,33,62,128],"TP":[2185,2652,2628,3060,2657,2204,1770,1526,1744,1563],"TE":[1,1,26,48,120,190,231,291,536,454]}},"Geografia formação de professor":{"c":{"LP":[5720,5095,5003,4561,4428,2958,3119,3391,3526,3637],"LE":[1623,2712,2360,3768,4344,4378,5179,3357,3611,3552]},"j":{"LP":[1772,1678,1719,1660,1678,1190,1270,1303,1246,1328],"LE":[169,344,278,539,591,464,489,311,305,251]}},"Gestão ambiental":{"c":{"BP":[402,304,293,386,350,261,197,290,272,270],"TP":[3673,2600,1665,1499,1153,766,666,803,736,713],"TE":[8548,6149,6234,5313,4551,5996,6102,5156,5676,5724]},"j":{"BP":[232,190,157,198,178,123,87,123,111,123],"TP":[1331,1052,664,601,488,320,275,283,261,225],"TE":[1242,1020,971,827,669,854,804,631,677,616]}},"Gestão comercial":{"c":{"TP":[4179,3709,3397,3430,4074,3440,2523,1453,1558,1608],"TE":[2835,2722,3021,4270,6857,9498,10304,10931,13589,12823]},"j":{"TP":[1281,1049,1018,1002,1313,1087,855,494,569,628],"TE":[183,187,255,411,683,1006,1102,1089,1608,1645]}},"Gestão da produção":{"c":{"TP":[930,876,627,627,462,446,423,385,353,696],"TE":[2229,1355,1085,1307,1212,1735,1838,2134,2193,4394]},"j":{"TP":[226,202,149,161,102,136,118,89,98,201],"TE":[123,87,61,67,53,114,100,102,111,278]}},"Gestão da qualidade":{"c":{"TP":[2701,2259,1517,1587,1016,1134,929,512,532,546],"TE":[240,276,477,851,1366,2904,3449,4065,6386,5741]},"j":{"TP":[596,518,368,391,267,359,289,139,136,149],"TE":[16,14,41,64,110,224,290,369,626,600]}},"Gestão da tecnologia da informação":{"c":{"TP":[3442,3198,3045,2822,2675,2664,2517,1683,1799,2330],"TE":[2596,2127,1930,2631,3117,4192,3972,4819,6137,6765]},"j":{"TP":[1407,1411,1407,1369,1426,1492,1490,928,976,1477],"TE":[396,267,245,318,367,591,632,797,1287,1657]}},"Gestão de negócios":{"c":{"BP":[93,247,87,97,41,19,43,55,56,63],"BE":[0,0,0,0,0,0,7,16,25,25],"TP":[6963,6230,5376,5414,5603,5151,4108,3400,2981,3070],"TE":[11698,9697,9837,11796,13256,17212,17483,13290,16004,14948]},"j":{"BP":[61,175,64,44,18,10,19,34,38,37],"BE":[0,0,0,0,0,0,3,8,7,7],"TP":[2264,2025,1853,1979,2058,1973,1644,1385,1234,1404],"TE":[1343,1048,1267,1409,1539,2193,2234,1716,2239,2165]}},"Gestão de pessoas":{"c":{"TP":[26555,25038,19618,18842,16731,17254,12860,6927,6607,7054],"TE":[22889,19810,18947,20902,22502,30275,33943,31737,43576,40376]},"j":{"TP":[10574,9920,8647,8876,7775,8544,6565,3270,3220,3487],"TE":[3681,3223,3361,4009,4308,6513,7228,6647,9755,9136]}},"Gestão financeira":{"c":{"BP":[12,19,26,36,36,30,22,45,33,25],"TP":[6011,5179,4291,4394,4058,3981,2900,1601,1624,1645],"TE":[2888,3532,4928,6372,6698,9468,10982,11630,14979,13882]},"j":{"BP":[9,12,21,28,26,23,18,34,12,15],"TP":[1955,1733,1587,1690,1630,1726,1398,759,788,841],"TE":[279,409,640,934,1028,1631,1976,2216,3198,3062]}},"Gestão hospitalar":{"c":{"TP":[900,795,665,586,544,558,369,477,274,329],"TE":[1265,1067,773,891,1560,2116,2099,2666,2897,3681]},"j":{"TP":[149,164,173,157,182,144,110,123,90,104],"TE":[190,151,76,84,161,230,232,241,300,313]}},"Gestão pública":{"c":{"BP":[314,319,282,341,249,195,140,279,252,319],"BE":[0,0,0,0,0,0,0,0,0,1],"TP":[1395,1444,1799,1163,1631,1180,1183,1143,674,1170],"TE":[7641,8580,7806,9120,10498,12899,15225,13800,16777,14660]},"j":{"BP":[178,195,146,172,109,100,69,133,126,159],"TP":[401,532,697,563,659,511,469,426,238,274],"TE":[467,558,728,1092,1338,1650,1884,1960,2388,2048]}},"História formação de professor":{"c":{"LP":[9082,8819,8585,7421,7135,5204,5101,5348,5555,5428],"LE":[4614,4213,4509,4815,5909,6849,8183,6157,6667,7133]},"j":{"LP":[2786,2865,3179,3205,3312,2629,2737,2621,2651,2657],"LE":[555,432,461,569,796,771,842,692,789,683]}},"Investigação e perícia":{"c":{"TE":[0,0,0,64,345,1263,2124,3159,4075,4424]},"j":{"TE":[0,0,0,3,79,260,541,915,1322,1475]}},"Letras espanhol formação de professor":{"c":{"LP":[996,1027,1040,981,767,375,368,443,470,451],"LE":[763,427,447,459,955,311,348,243,351,324]},"j":{"LP":[331,347,329,244,266,101,150,171,163,161],"LE":[98,61,41,40,217,22,23,24,21,14]}},"Letras inglês formação de professor":{"c":{"LP":[2436,2396,2218,2034,1813,1441,1264,1395,1549,1411],"LE":[462,727,357,829,859,1478,1619,1436,1860,1672]},"j":{"LP":[872,860,841,913,844,759,648,667,628,620],"LE":[66,86,38,109,106,220,218,184,195,214]}},"Letras português espanhol formação de professor":{"c":{"LP":[884,900,756,802,654,635,673,624,646,708],"LE":[261,212,416,510,506,797,1638,383,423,403]},"j":{"LP":[327,336,283,288,303,250,309,254,261,270],"LE":[16,14,35,32,42,44,95,30,57,41]}},"Letras português formação de professor":{"c":{"LP":[8484,8531,7595,7221,7517,5076,4828,5306,5697,5645],"LE":[3334,3852,4210,3978,3935,5100,6133,5164,6167,6398]},"j":{"LP":[2487,2533,2677,2584,2810,2166,2259,2212,2355,2451],"LE":[360,464,501,468,432,592,704,486,547,421]}},"Letras português inglês formação de professor":{"c":{"LP":[4513,4225,4356,3245,3032,2796,3033,2927,2501,2260],"LE":[1285,1555,1623,1853,2317,2838,3365,3277,3285,2894]},"j":{"LP":[1669,1544,1646,1577,1586,1485,1595,1505,1255,1137],"LE":[137,133,194,215,266,360,461,497,558,538]}},"Letras tradutor e intérprete":{"c":{"BP":[388,401,339,382,311,259,311,302,230,233],"BE":[0,54,39,64,66,132,189,162,129,110]},"j":{"BP":[241,238,228,232,180,161,205,163,111,110],"BE":[0,13,12,18,11,26,48,41,21,16]}},"Logística":{"c":{"BP":[65,46,42,37,23,32,20,13,9,3],"TP":[15633,13738,10990,9785,8826,9156,6315,4200,4404,4670],"TE":[8352,6955,6511,8029,9217,13502,16361,17084,24542,23417]},"j":{"BP":[28,21,23,15,8,15,8,6,5,1],"TP":[4801,4339,3856,3582,3341,3604,2587,1612,1782,1981],"TE":[825,715,768,1009,1149,1931,2325,2437,4067,3976]}},"Marketing":{"c":{"BP":[524,614,375,679,376,445,253,449,378,392],"BE":[13,17,10,0,0,0,0,10,35,54],"TP":[6307,5796,4810,4736,4521,4884,3689,2455,2755,3124],"TE":[3724,3733,3631,5670,6233,9362,10487,12028,16717,15706]},"j":{"BP":[232,350,208,362,209,285,162,299,247,270],"BE":[1,0,1,0,0,0,0,1,9,15],"TP":[2345,2166,1977,2043,1971,2417,1927,1269,1590,1996],"TE":[450,453,516,886,1039,1886,2354,2770,4527,4631]}},"Matemática formação de professor":{"c":{"LP":[8090,7098,7290,6315,5542,4491,4929,4971,5498,4309],"LE":[3226,4130,3698,4498,5128,7205,8211,6542,6891,6644]},"j":{"LP":[2690,2580,2833,2619,2718,2211,2513,2458,2488,2052],"LE":[345,573,504,595,583,912,834,701,709,662]}},"Medicina":{"c":{"BP":[17042,16568,17130,19234,20316,25052,23811,25535,32611,38501]},"j":{"BP":[4525,4088,4099,4611,5260,6769,6667,6488,8262,10218]}},"Medicina veterinária":{"c":{"BP":[7755,8750,9073,11907,13076,13770,14431,16514,18077,19922],"BE":[0,0,0,0,0,0,0,3,34,21]},"j":{"BP":[3871,4379,4689,6121,6703,7128,7227,8273,9181,9567],"BE":[0,0,0,0,0,0,0,0,12,7]}},"Música formação de professor":{"c":{"LP":[1724,1633,1710,1694,1494,946,1084,969,958,877],"LE":[310,608,882,659,773,1154,1409,900,732,902]},"j":{"LP":[518,550,496,603,490,333,372,294,262,238],"LE":[31,54,95,71,66,105,145,91,65,78]}},"Nutrição":{"c":{"BP":[11893,12272,14570,19405,18865,18563,21996,19966,17832,14134],"BE":[0,0,0,39,79,151,1255,2368,4551,8285]},"j":{"BP":[6170,6345,7622,9914,9710,9477,10390,9267,8098,6566],"BE":[0,0,0,2,5,6,173,289,513,793]}},"Odontologia":{"c":{"BP":[12891,14545,16687,18530,18567,18689,23254,23878,26702,26883]},"j":{"BP":[7837,8617,10099,10929,10923,11141,13359,13694,14707,14084]}},"Pedagogia":{"c":{"BP":[465,554,165,68,0,0,12,0,0,0],"BE":[0,0,0,0,0,0,0,6,11,16],"LP":[61154,61565,57971,52478,47239,41262,40198,36961,31020,22577],"LE":[60283,62273,66645,69932,77170,94771,125229,114646,93100,80881]},"j":{"BP":[54,83,29,11,0,0,3,0,0,0],"BE":[0,0,0,0,0,0,0,0,2,1],"LP":[15696,16500,16836,16860,17138,16188,15824,14305,11239,8152],"LE":[6035,6722,7453,7749,9428,12320,17811,15393,11842,8509]}},"Programas interdisciplinares abrangendo negócios, administração e direito":{"c":{"BP":[40,33,47,65,49,38,36,38,44,52],"BE":[0,0,159,5,0,0,0,108,0,0],"TP":[0,0,0,24,14,12,5,3,3,0],"TE":[0,0,0,8,0,92,181,55,175,165]},"j":{"BP":[25,21,18,38,25,23,19,21,28,34],"BE":[0,0,19,0,0,0,0,5,0,0],"TP":[0,0,0,3,3,1,2,2,1,0],"TE":[0,0,0,4,0,5,20,4,23,10]}},"Psicologia":{"c":{"BP":[23156,26336,30179,35102,37584,34136,37349,39008,42706,49021],"BE":[0,0,0,0,0,0,0,0,0,7],"LP":[115,0,0,0,0,0,0,0,0,0],"TP":[0,0,0,0,0,0,0,25,46,32],"TE":[0,0,0,0,0,0,0,0,5,5]},"j":{"BP":[9026,10492,12014,13683,15022,13853,15686,16292,17564,19641],"BE":[0,0,0,0,0,0,0,0,0,1],"LP":[67,0,0,0,0,0,0,0,0,0],"TP":[0,0,0,0,0,0,0,12,26,17],"TE":[0,0,0,0,0,0,0,0,1,2]}},"Publicidade e propaganda":{"c":{"BP":[13502,14106,13992,14093,11745,11860,9793,9520,8681,7034],"BE":[0,0,0,0,0,33,157,251,883,1317],"TP":[291,302,236,453,182,184,103,231,192,184],"TE":[57,68,61,51,38,40,28,58,93,118]},"j":{"BP":[8890,9035,9334,9266,7848,8262,6718,6364,5840,4666],"BE":[0,0,0,0,0,14,58,73,254,404],"TP":[173,173,136,282,108,107,53,125,111,110],"TE":[10,11,17,17,10,12,8,26,40,50]}},"Química formação de professor":{"c":{"LP":[3226,3394,3339,3234,2985,2305,2811,2888,2796,2314],"LE":[537,572,696,915,960,1155,1302,914,911,971]},"j":{"LP":[1405,1469,1372,1439,1381,1084,1227,1312,1210,962],"LE":[48,88,59,87,61,94,126,79,77,83]}},"Radiologia":{"c":{"TP":[3229,3559,3642,3413,3134,3077,3143,3118,2218,2044],"TE":[10,100,201,336,649,747,913,664,1024,3623]},"j":{"TP":[1137,1142,1224,1372,1335,1314,1421,1389,908,894],"TE":[5,3,6,11,23,53,78,55,135,535]}},"Redes de computadores":{"c":{"TP":[4728,4492,3638,2924,2517,2288,1452,1099,767,724],"TE":[141,206,211,381,637,1120,1342,1481,2422,3109]},"j":{"TP":[1457,1355,1248,1036,912,882,544,374,314,328],"TE":[10,21,12,35,68,110,155,151,333,424]}},"Relações internacionais":{"c":{"BP":[3529,3803,3569,3659,3236,3715,3370,3769,3936,3503],"BE":[0,1,27,140,219,379,382,307,450,765]},"j":{"BP":[2556,2766,2588,2612,2363,2700,2434,2850,2904,2585],"BE":[0,0,4,19,37,87,115,91,107,268]}},"Segurança no trabalho":{"c":{"TP":[947,896,615,446,279,172,99,90,56,40],"TE":[2591,2357,1717,1047,885,1065,1068,1169,1191,1518]},"j":{"TP":[214,188,154,112,102,46,35,25,21,7],"TE":[410,434,310,159,111,131,124,125,118,163]}},"Segurança privada":{"c":{"TP":[827,831,479,668,606,400,516,51,25,57],"TE":[41,76,124,696,1558,2370,4378,4379,5689,4384]},"j":{"TP":[66,63,58,69,58,62,48,4,5,2],"TE":[3,5,10,45,94,192,411,464,668,428]}},"Segurança pública":{"c":{"BP":[57,161,61,27,41,66,35,34,77,56],"TP":[105,87,35,71,164,118,948,71,404,331],"TE":[1291,1529,2163,3021,3892,5522,5256,6033,8296,7815]},"j":{"BP":[15,31,20,11,14,33,19,17,31,26],"TP":[42,29,11,31,74,47,97,28,34,23],"TE":[54,56,76,98,187,251,308,383,970,1305]}},"Serviço social":{"c":{"BP":[12980,13870,12455,11334,8587,6645,5683,5326,4584,3912],"BE":[17396,15526,15516,10393,11016,11867,11209,9556,11723,11029],"TP":[11,7,0,0,0,0,0,0,0,0]},"j":{"BP":[3555,3728,3378,3001,2594,2052,1816,1829,1635,1416],"BE":[1594,1357,1417,953,1041,1071,936,765,928,739],"TP":[2,0,0,0,0,0,0,0,0,0]}},"Serviços jurídicos e cartoriais":{"c":{"TP":[0,0,0,0,92,118,25,174,179,184],"TE":[0,0,0,0,1748,3095,3419,3725,3677,3572]},"j":{"TP":[0,0,0,0,32,71,9,65,78,95],"TE":[0,0,0,0,359,751,870,971,971,862]}},"Sistemas de informação":{"c":{"BP":[9950,9694,8727,8040,7153,6856,5992,5907,5968,5593],"BE":[291,479,416,669,867,1343,1140,1329,1660,2451],"TP":[10033,9449,9145,9412,9617,10229,10830,9689,10788,16794],"TE":[3391,4094,4283,5337,6568,10190,13818,19410,27606,36989]},"j":{"BP":[4534,4441,3902,3699,3404,3498,3114,3037,3182,2914],"BE":[27,39,26,61,89,223,166,194,327,553],"TP":[4913,4780,4784,5096,5276,5857,6384,5629,6619,11342],"TE":[652,790,743,913,1303,2044,3040,4274,7298,10742]}},"Teologia":{"c":{"BP":[3227,3413,4298,2598,2136,1602,1844,1629,1459,1462],"BE":[697,713,1307,1483,1331,1937,2568,2841,3371,4686],"TE":[0,0,0,0,15,82,76,72,66,84]},"j":{"BP":[205,236,255,227,185,178,137,143,98,72],"BE":[14,11,32,34,47,49,79,86,87,100],"TE":[0,0,0,0,1,6,3,4,1,9]}},"Turismo":{"c":{"BP":[3284,2992,1927,2094,1625,1272,1204,1348,1239,1216],"BE":[43,45,26,25,27,51,20,28,80,82],"TP":[892,755,730,693,643,491,420,427,418,335],"TE":[233,242,283,527,635,941,934,960,1244,1254]},"j":{"BP":[1508,1438,1023,1038,813,735,642,668,515,524],"BE":[6,1,0,3,2,3,1,3,17,15],"TP":[453,354,339,287,320,215,195,198,191,129],"TE":[32,43,38,90,103,182,184,164,203,225]}}},"tic":{"Agrocomputação":{"c":{"TP":[0,0,0,0,0,30,62,46,34,129],"TE":[0,0,0,0,0,0,0,0,2,9]},"j":{"TP":[0,0,0,0,0,23,48,21,26,81],"TE":[0,0,0,0,0,0,0,0,0,4]},"i":{"TP":[0,0,0,0,0,168,137,241,156,262],"TE":[0,0,0,0,0,0,306,548,656,411]}},"Banco de dados":{"c":{"TP":[365,274,266,250,274,269,258,153,216,147],"TE":[22,23,35,37,118,201,301,529,863,794]},"j":{"TP":[151,94,109,101,107,109,104,58,105,71],"TE":[3,3,2,3,9,23,24,45,120,125]},"i":{"TP":[810,709,574,612,567,582,556,497,362,366],"TE":[118,127,549,659,1075,1768,3237,4010,4550,5678]}},"Ciência da computação":{"c":{"BP":[5751,6415,6229,6580,6342,6619,6574,6815,8056,7993],"BE":[0,0,0,0,0,0,29,309,1679,2531],"TP":[129,123,92,77,84,64,64,59,76,83]},"j":{"BP":[2840,3120,3190,3600,3615,3889,3957,3969,4924,4778],"BE":[0,0,0,0,0,0,2,76,535,859],"TP":[53,59,41,32,36,35,26,24,38,52]},"i":{"BP":[22743,22848,22872,23140,23188,22988,19888,29957,32296,32482],"BE":[4,0,0,251,2889,5662,10769,16115,24200,25588],"TP":[174,187,208,185,193,210,212,199,182,255]}},"Ciência de dados":{"c":{"BP":[0,0,0,0,0,0,1,3,64,111],"BE":[0,0,0,0,0,0,5,6,530,149],"TP":[0,0,0,0,0,2,12,34,101,216],"TE":[0,0,0,0,0,59,312,798,1500,2110]},"j":{"BP":[0,0,0,0,0,0,1,2,48,81],"BE":[0,0,0,0,0,0,1,1,24,5],"TP":[0,0,0,0,0,0,4,16,36,115],"TE":[0,0,0,0,0,2,23,84,195,321]},"i":{"BP":[0,0,0,0,0,166,373,664,693,989],"BE":[0,0,0,0,0,3568,3481,6909,4370,2764],"TP":[0,0,0,0,0,184,338,713,821,1091],"TE":[0,0,0,0,0,4723,7593,10520,13742,14676]}},"Computação e Tecnologias da Informação e Comunicação (TIC) em biociências e saúde":{"c":{"BP":[0,0,0,0,0,34,32,55,29,35],"TP":[0,0,0,0,0,3,5,4,13,10],"TE":[0,0,0,0,0,0,5,3,8,6]},"j":{"BP":[0,0,0,0,0,17,18,34,20,17],"TP":[0,0,0,0,0,3,2,3,8,5]},"i":{"BP":[0,0,0,0,0,96,83,93,131,113],"TP":[0,0,0,0,0,17,18,16,19,15],"TE":[0,0,0,0,0,25,68,77,27,51]}},"Criação digital":{"c":{"BP":[0,0,0,0,0,52,62,69,114,113],"TP":[0,0,0,0,0,0,11,49,72,84]},"j":{"BP":[0,0,0,0,0,29,35,30,54,60],"TP":[0,0,0,0,0,0,3,20,44,51]},"i":{"BP":[0,0,0,0,0,193,166,199,187,177],"TP":[0,0,0,0,0,174,188,163,163,160]}},"Defesa cibernética":{"c":{"TP":[0,0,0,0,19,53,20,63,129,104],"TE":[0,0,0,0,50,71,240,713,873,1028]},"j":{"TP":[0,0,0,0,9,40,18,30,97,73],"TE":[0,0,0,0,12,11,37,113,195,293]},"i":{"BE":[0,0,0,0,0,0,0,0,0,79],"TP":[0,0,0,51,52,127,198,308,341,421],"TE":[0,0,0,112,704,1983,3518,4782,7279,8581]}},"Engenharia de computação (DCN Computação)":{"c":{"BP":[751,861,986,1124,1337,1087,1267,1236,1484,0],"BE":[0,0,0,0,57,53,6,5,3,0]},"j":{"BP":[361,448,489,601,678,607,726,672,798,0],"BE":[0,0,0,0,12,9,1,0,3,0]},"i":{"BP":[4030,4321,3916,3971,4042,3630,3512,4371,4459,0],"BE":[534,478,81,106,101,60,406,1347,2743,0]}},"Engenharia de software":{"c":{"BP":[138,158,261,291,394,435,602,855,1184,1451],"BE":[0,0,0,22,65,168,231,369,680,1573],"TP":[34,10,14,13,11,8,11,9,0,0],"TE":[0,0,0,0,0,0,0,37,86,57]},"j":{"BP":[93,114,159,200,245,309,392,558,780,958],"BE":[0,0,0,1,9,24,38,42,123,299],"TP":[16,7,8,12,8,5,9,7,0,0],"TE":[0,0,0,0,0,0,0,7,20,11]},"i":{"BP":[1252,1382,1656,1982,2739,2900,3056,6160,9825,12187],"BE":[483,283,727,1038,1679,4187,11886,23778,27605,32887],"TP":[31,36,12,22,25,22,28,66,0,39],"TE":[0,0,0,0,0,86,511,1569,2106,1072]}},"Gestão da tecnologia da informação":{"c":{"TP":[3442,3198,3045,2822,2675,2664,2517,1683,1799,2330],"TE":[2596,2127,1930,2631,3117,4192,3972,4819,6137,6765]},"j":{"TP":[1407,1411,1407,1369,1426,1492,1490,928,976,1477],"TE":[396,267,245,318,367,591,632,797,1287,1657]},"i":{"TP":[7638,7316,7637,6571,7428,6876,4535,6460,6919,6061],"TE":[11327,9677,10303,11821,13795,17562,24802,33879,37921,38031]}},"Inteligência artificial":{"c":{"BP":[0,0,0,0,0,0,0,0,14,29],"TP":[0,0,0,0,0,0,0,13,21,35],"TE":[0,0,0,0,0,0,0,7,22,70]},"j":{"BP":[0,0,0,0,0,0,0,0,14,24],"TP":[0,0,0,0,0,0,0,9,9,30],"TE":[0,0,0,0,0,0,0,2,8,12]},"i":{"BP":[0,0,0,0,0,42,40,43,41,122],"TP":[0,0,0,0,0,0,16,28,25,78],"TE":[0,0,0,0,0,37,61,329,630,3719]}},"Internet das coisas":{"c":{"TE":[0,0,0,0,0,33,58,44,91,71]},"j":{"TE":[0,0,0,0,0,5,1,2,3,4]},"i":{"TE":[0,0,0,0,0,192,358,297,273,252]}},"Jogos digitais":{"c":{"BP":[0,0,0,0,0,0,0,18,29,84],"TP":[513,693,864,976,985,1378,1039,717,632,489],"TE":[0,0,24,14,56,129,201,409,631,866]},"j":{"BP":[0,0,0,0,0,0,0,17,27,72],"TP":[350,473,587,680,686,999,748,498,432,329],"TE":[0,0,7,5,30,48,74,153,288,397]},"i":{"BP":[0,0,0,0,53,100,316,311,320,245],"TP":[2725,2981,3345,3500,3094,2198,1365,1330,1242,1155],"TE":[47,65,99,596,1167,2118,2445,4081,3984,3325]}},"Programas abrangendo Computação e Tecnologias da Informação e Comunicação (TIC) em processo de definição da classificação":{"c":{"TE":[0,0,0,0,0,0,0,0,0,160]},"j":{"TE":[0,0,0,0,0,0,0,0,0,25]},"i":{"TE":[0,0,0,0,0,0,0,0,0,701]}},"Programas interdisciplinares abrangendo computação e Tecnologias da Informação e Comunicação (TIC)":{"c":{"BP":[105,137,185,214,235,150,125,160,187,221],"BE":[0,0,0,0,0,0,0,0,0,674],"TP":[0,0,0,0,19,0,0,0,59,171],"TE":[0,0,0,0,1,2,36,74,122,112]},"j":{"BP":[64,79,118,112,131,94,76,83,95,107],"BE":[0,0,0,0,0,0,0,0,0,48],"TP":[0,0,0,0,15,0,0,0,37,124],"TE":[0,0,0,0,0,0,2,8,11,15]},"i":{"BP":[833,947,890,919,910,526,384,525,557,487],"BE":[0,0,0,0,48,0,0,0,0,12285],"TP":[0,0,77,104,350,0,321,758,1323,1523],"TE":[0,0,0,267,2290,325,339,498,380,327]}},"Redes de computadores":{"c":{"TP":[4728,4492,3638,2924,2517,2288,1452,1099,767,724],"TE":[141,206,211,381,637,1120,1342,1481,2422,3109]},"j":{"TP":[1457,1355,1248,1036,912,882,544,374,314,328],"TE":[10,21,12,35,68,110,155,151,333,424]},"i":{"BE":[0,0,0,0,0,0,0,0,0,13],"TP":[9319,8520,7340,6482,5103,3949,2526,2331,1934,1681],"TE":[726,1041,2315,4074,4709,6028,9468,10633,11435,10641]}},"Segurança da informação":{"c":{"BP":[0,0,0,0,0,0,0,0,6,12],"TP":[282,323,260,388,330,333,371,389,449,418],"TE":[52,53,98,114,141,248,400,683,1129,1263]},"j":{"BP":[0,0,0,0,0,0,0,0,3,9],"TP":[92,110,113,165,148,178,195,207,215,251],"TE":[6,10,12,16,22,45,52,107,253,317]},"i":{"BP":[0,0,0,0,0,24,40,44,33,77],"TP":[826,906,904,994,1016,986,960,1003,1191,1006],"TE":[418,327,333,1015,1211,3397,4187,4321,3944,5388]}},"Sistemas de informação":{"c":{"BP":[9950,9694,8727,8040,7153,6856,5992,5907,5968,5593],"BE":[291,479,416,669,867,1343,1140,1329,1660,2451],"TP":[10033,9449,9145,9412,9617,10229,10830,9689,10788,16794],"TE":[3391,4094,4283,5337,6568,10190,13818,19410,27606,36989]},"j":{"BP":[4534,4441,3902,3699,3404,3498,3114,3037,3182,2914],"BE":[27,39,26,61,89,223,166,194,327,553],"TP":[4913,4780,4784,5096,5276,5857,6384,5629,6619,11342],"TE":[652,790,743,913,1303,2044,3040,4274,7298,10742]},"i":{"BP":[24215,22143,21416,19557,18595,16936,13653,17763,19128,17984],"BE":[3214,2971,4555,4300,3949,6062,7745,10640,12200,13299],"TP":[26599,27741,28579,30905,34714,33651,25903,43276,53353,56362],"TE":[18738,21571,27808,36019,43931,67668,96251,149021,169605,164433]}},"Sistemas embarcados":{"c":{"TP":[0,6,12,3,5,6,5,4,22,0]},"j":{"TP":[0,1,3,0,0,0,0,0,11,0]},"i":{"TP":[26,7,17,13,25,58,96,89,110,0]}},"Sistemas para internet":{"c":{"TP":[1144,1073,892,986,938,834,764,673,808,938],"TE":[347,233,298,257,278,364,423,933,1151,1387]},"j":{"TP":[522,497,384,492,458,421,322,286,399,523],"TE":[46,30,43,38,59,61,64,142,205,295]},"i":{"BE":[0,0,0,0,0,0,0,8,0,0],"TP":[3242,3228,3181,2897,2729,2630,2262,2760,3034,3191],"TE":[1173,611,1347,1509,1512,2397,3728,6724,6335,6337]}}}};
+const Y=DATA.years,N=Y.length,nf=new Intl.NumberFormat('pt-BR');
+const SEG=[['BP','Bacharelado presencial','--b1'],['BE','Bacharelado EaD','--b2'],['LP','Licenciatura presencial','--l1'],['LE','Licenciatura EaD','--l2'],['TP','Tecnólogo presencial','--t1'],['TE','Tecnólogo EaD','--t2']];
+const SHORT={'Programas interdisciplinares abrangendo computação e Tecnologias da Informação e Comunicação (TIC)':'Programas interdisciplinares em TIC','Programas abrangendo Computação e Tecnologias da Informação e Comunicação (TIC) em processo de definição da classificação':'TIC em definição de classificação','Computação e Tecnologias da Informação e Comunicação (TIC) em biociências e saúde':'TIC em biociências e saúde','Engenharia de computação (DCN Computação)':'Engenharia de computação','Gestão da tecnologia da informação':'Gestão da TI','Educação física formação de professor':'Educação física (licenciatura)'};
+const nm=k=>SHORT[k]||k;
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const active=(g,m)=>SEG.filter(s=>g.includes(s[0][0])&&m.includes(s[0][1]));
+const sumSeg=(obj,segs,i)=>segs.reduce((a,s)=>a+((obj&&obj[s[0]])?obj[s[0]][i]:0),0);
+const F={'r-age':'c','r-grau':'BLT','r-mod':'PE','m-age':'c','m-grau':'BLT','m-scale':'abs','t-met':'c','t-grau':'BT','t-mod':'PE'};
+const legendHTML=segs=>segs.map(s=>'<span><i style="background:var('+s[2]+')"></i>'+s[1]+'</span>').join('');
+document.querySelectorAll('.seg').forEach(seg=>{seg.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;seg.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));F[seg.dataset.f]=b.dataset.v;const p=seg.dataset.f[0];if(p==='r')raceFilter();if(p==='m')drawMod();if(p==='t')drawTech();if(p==='q')drawQ();});});
+
+/* corrida */
+const race=document.getElementById('race'),slider=document.getElementById('raceSlider'),playBtn=document.getElementById('racePlay');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const TOP=12,rows={},pos={};let t=0,playing=!reduce,last=null;
+const rowH=()=>window.innerWidth<=640?30:34;
+Object.keys(DATA.gen).forEach(k=>{const r=document.createElement('div');r.className='rrow';r.innerHTML='<div class="rlab"></div><div class="rtrack"><div class="rbar"></div><span class="rval"></span></div>';r.querySelector('.rlab').textContent=nm(k);r.querySelector('.rlab').title=nm(k);race.appendChild(r);rows[k]={el:r,bar:r.querySelector('.rbar'),val:r.querySelector('.rval'),segs:{}};pos[k]=TOP+1;r.style.top=(TOP+1)*rowH()+'px';r.style.opacity=0;});
+function raceFilter(){const segs=active(F['r-grau'],F['r-mod']);document.getElementById('raceLegend').innerHTML=legendHTML(segs);
+Object.values(rows).forEach(o=>{o.bar.innerHTML='';o.segs={};segs.forEach(s=>{const i=document.createElement('i');i.style.background='var('+s[2]+')';o.bar.appendChild(i);o.segs[s[0]]=i;});});if(!playing)renderRace(true);}
+const ease=f=>f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2;
+function renderRace(snap){const i=Math.min(Math.floor(t),N-2),f=ease(Math.min(t-i,1));const segs=active(F['r-grau'],F['r-mod']),age=F['r-age'],h=rowH();
+const vals=Object.keys(DATA.gen).map(k=>{const o=DATA.gen[k][age];const parts=segs.map(s=>{const a=o[s[0]]?o[s[0]][i]:0,b=o[s[0]]?o[s[0]][i+1]:0;return [s[0],a+(b-a)*f];});return [k,parts.reduce((a,p)=>a+p[1],0),parts];}).sort((a,b)=>b[1]-a[1]);
+const max=Math.max(vals[0][1],1);
+vals.forEach(([k,v,parts],r)=>{const o=rows[k],target=(r<TOP&&v>0)?r:TOP+1;pos[k]=snap?target:pos[k]+(target-pos[k])*.16;o.el.style.top=pos[k]*h+'px';o.el.style.opacity=target<TOP?1:0;o.bar.style.width=(v/max*82)+'%';parts.forEach(([c,pv])=>{if(o.segs[c])o.segs[c].style.width=(v?pv/v*100:0)+'%';});o.val.textContent=nf.format(Math.round(v));});
+document.getElementById('raceYear').textContent=Y[Math.round(t)];
+const tot=DATA.genTot[age];const ta=sumSeg(tot,segs,i),tb=sumSeg(tot,segs,i+1);document.getElementById('raceTot').textContent=nf.format(Math.round(ta+(tb-ta)*f));
+slider.value=Math.round(t/(N-1)*900);}
+const ICON_PLAY='<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z"/></svg>',ICON_PAUSE='<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1h3v10H2zM7 1h3v10H7z"/></svg>';
+function setPlay(p){playing=p;playBtn.innerHTML=p?ICON_PAUSE+'Pausar':ICON_PLAY+(t>=N-1?'Repetir':'Reproduzir');}
+playBtn.onclick=()=>{if(!playing&&t>=N-1)t=0;setPlay(!playing);};
+slider.oninput=()=>{t=slider.value/900*(N-1);setPlay(false);renderRace(false);};
+function loop(ts){if(last===null)last=ts;const dt=Math.min(ts-last,100);last=ts;if(playing){t+=dt/1500;if(t>=N-1){t=N-1;setPlay(false);}}renderRace(false);requestAnimationFrame(loop);}
+let started=false;const io=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!started){started=true;requestAnimationFrame(loop);}},{threshold:.2});
+raceFilter();setPlay(playing);renderRace(true);io.observe(race);
+if(reduce){t=N-1;setPlay(false);renderRace(true);requestAnimationFrame(loop);started=true;}
+
+/* graficos */
+const charts={};
+function baseOpts(stackPct,fmtY){const g=css('--grid'),m=css('--muted');return{responsive:true,maintainAspectRatio:false,animation:{duration:reduce?0:500},interaction:{mode:'index',intersect:false},plugins:{legend:{display:false},tooltip:{backgroundColor:css('--paper'),titleColor:css('--ink'),bodyColor:css('--ink2'),footerColor:css('--ink'),borderColor:css('--rule'),borderWidth:1,padding:10,titleFont:{family:'Inter',weight:'600'},bodyFont:{family:'Inter'},footerFont:{family:'Inter',weight:'600'}}},scales:{x:{stacked:true,grid:{display:false},border:{color:css('--rule')},ticks:{color:m,font:{family:'Inter'}}},y:{stacked:true,max:stackPct?100:undefined,grid:{color:g},border:{display:false},ticks:{color:m,font:{family:'Inter'},callback:fmtY}}}};}
+function stacked(id,datasets,pct,totals){const ds=datasets.map(d=>({label:d.label,data:pct?d.data.map((v,i)=>totals[i]?v/totals[i]*100:0):d.data,backgroundColor:css(d.color),borderColor:css('--paper'),borderWidth:{top:2},borderSkipped:'bottom',maxBarThickness:46,borderRadius:0}));
+const o=baseOpts(pct,v=>pct?v+'%':nf.format(v));o.plugins.tooltip.callbacks={label:x=>' '+x.dataset.label+': '+(pct?x.raw.toFixed(1).replace('.',',')+'%':nf.format(x.raw)),footer:it=>pct?'':'Total: '+nf.format(totals[it[0].dataIndex])};
+if(charts[id]){charts[id].destroy();}charts[id]=new Chart(document.getElementById(id),{type:'bar',data:{labels:Y.map(String),datasets:ds},options:o});}
+
+function drawMod(){const age=F['m-age'],g=F['m-grau'],tot=DATA.genTot[age];const mods=[['P','Presencial','--b1'],['E','EaD','--t1']];
+document.getElementById('modLegend').innerHTML=mods.map(m=>'<span><i style="background:var('+m[2]+')"></i>'+m[1]+'</span>').join('');
+const ds=mods.map(m=>({label:m[1],color:m[2],data:Y.map((_,i)=>sumSeg(tot,active(g,m[0]),i))}));const totals=Y.map((_,i)=>ds[0].data[i]+ds[1].data[i]);stacked('modChart',ds,F['m-scale']==='pct',totals);}
+
+/* tecnologia */
+const tSel=document.getElementById('tCourse'),tYear=document.getElementById('tYear');
+Object.keys(DATA.tic).sort((a,b)=>nm(a).localeCompare(nm(b),'pt')).forEach(k=>{const o=document.createElement('option');o.value=k;o.textContent=nm(k);tSel.appendChild(o);});
+Y.slice(1).reverse().forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=y;tYear.appendChild(o);});
+tSel.onchange=drawTech;tYear.onchange=drawTech;
+const TSEG=SEG.filter(s=>s[0][0]!=='L');
+const metName={c:'formandos',j:'formandos de 18 a 24 anos',i:'ingressantes'};
+const pctf=v=>(v>=0?'+':'')+Math.round(v).toLocaleString('pt-BR')+'%';
+function courseSeries(k,met,segs){return Y.map((_,i)=>sumSeg(DATA.tic[k][met],segs,i));}
+function drawTech(){const met=F['t-met'],segs=TSEG.filter(s=>F['t-grau'].includes(s[0][0])&&F['t-mod'].includes(s[0][1])),course=tSel.value;
+const keys=course?[course]:Object.keys(DATA.tic);
+const ds=segs.map(s=>({label:s[1],color:s[2],data:Y.map((_,i)=>keys.reduce((a,k)=>a+((DATA.tic[k][met][s[0]]||[])[i]||0),0))}));
+const totals=Y.map((_,i)=>ds.reduce((a,d)=>a+d.data[i],0));
+document.getElementById('tLegend').innerHTML=legendHTML(segs);stacked('tChart',ds,false,totals);
+const first=totals.findIndex(v=>v>0),a=totals[0],b=totals[N-1];const who=course?'o curso '+nm(course):'os cursos de TIC';const verb=course?' registrou ':' somaram ';
+let txt;if(!b){txt='Não há '+metName[met]+' para '+who+' com esse recorte. Tente outro grau ou modalidade.';}
+else{txt='Em 2024, '+who+verb+'<b>'+nf.format(b)+'</b> '+metName[met]+' nesse recorte. ';
+if(a>0){txt+=(b>=a?'Isso representa um crescimento de ':'Isso representa uma queda de ')+'<b>'+Math.abs(Math.round((b/a-1)*100)).toLocaleString('pt-BR')+'%</b> em relação a 2015 ('+nf.format(a)+').';}
+else{txt+='O registro começa em '+Y[first]+', com '+nf.format(totals[first])+'.';}
+const allSegs=TSEG;const tb=keys.reduce((s,k)=>s+sumSeg(DATA.tic[k][met],allSegs,N-1),0);if(segs.length<allSegs.length&&tb)txt+=' Esse recorte equivale a '+(b/tb*100).toFixed(1).replace('.',',')+'% do total registrado por '+who+'.';}
+document.getElementById('tSummary').innerHTML=txt;
+const yi=Y.indexOf(+tYear.value);document.getElementById('thYear').textContent=Y[yi];
+const rowsT=Object.keys(DATA.tic).map(k=>{const s=courseSeries(k,met,segs);const mix=TSEG.map(sg=>[sg,segs.includes(sg)?((DATA.tic[k][met][sg[0]]||[])[yi]||0):0]);return {k,a:s[0],b:s[yi],mix};}).filter(r=>r.a||r.b).sort((x,y)=>y.b-x.b);
+const tb=document.getElementById('tBody');tb.innerHTML='';
+if(!rowsT.length){tb.innerHTML='<tr><td colspan="5" style="color:var(--muted)">Nenhum curso tem dados nesse recorte. Ajuste o grau ou a modalidade.</td></tr>';return;}
+rowsT.forEach(r=>{const tr=document.createElement('tr');tr.tabIndex=0;if(r.k===course)tr.className='sel';
+const v=r.a?((r.b/r.a-1)*100):null;const tot=r.mix.reduce((s,m)=>s+m[1],0);
+tr.innerHTML='<td>'+nm(r.k)+'</td><td class="n">'+(r.a?nf.format(r.a):'–')+'</td><td class="n">'+nf.format(r.b)+'</td><td class="n">'+(v===null?'<span class="up">novo</span>':(r.b===0&&/Engenharia de computa/.test(r.k)&&yi===N-1)?'<span style="color:var(--muted)">reclassificado</span>':'<span class="'+(v>=0?'up':'down')+'">'+pctf(v)+'</span>')+'</td><td><div class="mix" title="'+r.mix.filter(m=>m[1]).map(m=>m[0][1]+': '+nf.format(m[1])).join(' | ')+'">'+r.mix.map(m=>m[1]?'<i style="width:'+(m[1]/tot*100)+'%;background:var('+m[0][2]+')"></i>':'').join('')+'</div></td>';
+const pick=()=>{tSel.value=(tSel.value===r.k)?'':r.k;drawTech();document.getElementById('tChart').scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});};
+tr.onclick=pick;tr.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick();}};tb.appendChild(tr);});}
+
+
+/* qualidade */
+const Q={"2021":{"all":{"area":[{"area":"Análise e desenv. de sistemas","mod":"E","cursos":92,"part":6774,"taxa":57.6,"geral":28.2,"ce":26.6,"fg":33.0,"low":58.7,"high":7.5,"cursos_high":21.0},{"area":"Análise e desenv. de sistemas","mod":"P","cursos":436,"part":9314,"taxa":73.5,"geral":31.2,"ce":30.7,"fg":32.8,"low":32.9,"high":31.8,"cursos_high":29.5},{"area":"Ciência da computação","mod":"E","cursos":5,"part":18,"taxa":42.9,"geral":31.9,"ce":31.4,"fg":33.3,"low":25.0,"high":12.5,"cursos_high":33.3},{"area":"Ciência da computação","mod":"P","cursos":324,"part":9975,"taxa":78.6,"geral":36.9,"ce":36.7,"fg":37.6,"low":38.2,"high":29.9,"cursos_high":22.5},{"area":"Gestão da TI","mod":"E","cursos":50,"part":2411,"taxa":53.7,"geral":36.9,"ce":38.8,"fg":31.1,"low":18.0,"high":18.2,"cursos_high":37.0},{"area":"Gestão da TI","mod":"P","cursos":109,"part":1615,"taxa":71.3,"geral":35.3,"ce":37.3,"fg":29.4,"low":48.3,"high":22.4,"cursos_high":17.8},{"area":"Redes de computadores","mod":"E","cursos":27,"part":900,"taxa":59.6,"geral":27.0,"ce":26.7,"fg":28.0,"low":27.4,"high":2.2,"cursos_high":9.1},{"area":"Redes de computadores","mod":"P","cursos":119,"part":1164,"taxa":66.4,"geral":29.5,"ce":29.6,"fg":29.2,"low":36.0,"high":19.1,"cursos_high":18.5},{"area":"Sistemas de informação","mod":"E","cursos":21,"part":755,"taxa":34.9,"geral":34.9,"ce":35.9,"fg":32.1,"low":72.7,"high":0.5,"cursos_high":5.6},{"area":"Sistemas de informação","mod":"P","cursos":403,"part":7839,"taxa":73.8,"geral":38.6,"ce":39.7,"fg":35.2,"low":31.9,"high":26.2,"cursos_high":21.9}],"grau":[{"grau":"B","mod":"E","cursos":26,"part":773,"taxa":35.0,"geral":34.9,"ce":35.8,"fg":32.2,"low":71.7,"high":0.8,"cursos_high":9.5},{"grau":"B","mod":"P","cursos":727,"part":17814,"taxa":76.4,"geral":37.6,"ce":38.0,"fg":36.5,"low":35.4,"high":28.3,"cursos_high":22.2},{"grau":"T","mod":"E","cursos":169,"part":10085,"taxa":56.8,"geral":30.2,"ce":29.6,"fg":32.1,"low":46.2,"high":9.6,"cursos_high":24.2},{"grau":"T","mod":"P","cursos":664,"part":12093,"taxa":72.5,"geral":31.6,"ce":31.5,"fg":32.0,"low":35.3,"high":29.4,"cursos_high":25.8}],"tot":[{"mod":"E","cursos":195,"part":10858,"taxa":54.4,"geral":30.5,"ce":30.0,"fg":32.1,"low":48.0,"high":8.9,"cursos_high":22.4},{"mod":"P","cursos":1391,"part":29907,"taxa":74.8,"geral":35.2,"ce":35.4,"fg":34.7,"low":35.4,"high":28.7,"cursos_high":23.8}]},"pub":{"area":[{"area":"Análise e desenv. de sistemas","mod":"E","cursos":2,"part":160,"taxa":66.9,"geral":33.7,"ce":32.2,"fg":38.2,"low":18.1,"high":81.9,"cursos_high":50.0},{"area":"Análise e desenv. de sistemas","mod":"P","cursos":145,"part":4094,"taxa":72.4,"geral":35.2,"ce":34.9,"fg":35.9,"low":5.7,"high":58.9,"cursos_high":51.1},{"area":"Ciência da computação","mod":"P","cursos":125,"part":4598,"taxa":80.1,"geral":42.9,"ce":43.3,"fg":41.8,"low":8.0,"high":58.2,"cursos_high":45.5},{"area":"Gestão da TI","mod":"P","cursos":19,"part":492,"taxa":74.0,"geral":41.8,"ce":44.2,"fg":34.5,"low":10.2,"high":66.3,"cursos_high":52.6},{"area":"Redes de computadores","mod":"P","cursos":24,"part":436,"taxa":69.0,"geral":33.2,"ce":33.4,"fg":32.4,"low":15.4,"high":36.6,"cursos_high":34.8},{"area":"Sistemas de informação","mod":"E","cursos":5,"part":124,"taxa":50.2,"geral":30.6,"ce":31.2,"fg":28.9,"low":100.0,"high":0.0,"cursos_high":0.0},{"area":"Sistemas de informação","mod":"P","cursos":114,"part":2854,"taxa":73.6,"geral":41.4,"ce":42.3,"fg":38.6,"low":14.5,"high":50.6,"cursos_high":39.8}],"grau":[{"grau":"B","mod":"E","cursos":5,"part":124,"taxa":50.2,"geral":30.6,"ce":31.2,"fg":28.9,"low":100.0,"high":0.0,"cursos_high":0.0},{"grau":"B","mod":"P","cursos":239,"part":7452,"taxa":77.5,"geral":42.4,"ce":42.9,"fg":40.6,"low":10.5,"high":55.3,"cursos_high":42.9},{"grau":"T","mod":"E","cursos":2,"part":160,"taxa":66.9,"geral":33.7,"ce":32.2,"fg":38.2,"low":18.1,"high":81.9,"cursos_high":50.0},{"grau":"T","mod":"P","cursos":188,"part":5022,"taxa":72.3,"geral":35.6,"ce":35.7,"fg":35.4,"low":7.0,"high":57.7,"cursos_high":49.2}],"tot":[{"mod":"E","cursos":7,"part":284,"taxa":58.4,"geral":32.4,"ce":31.7,"fg":34.2,"low":53.7,"high":46.3,"cursos_high":16.7},{"mod":"P","cursos":427,"part":12474,"taxa":75.3,"geral":39.7,"ce":40.0,"fg":38.5,"low":9.1,"high":56.2,"cursos_high":45.7}]},"priv":{"area":[{"area":"Análise e desenv. de sistemas","mod":"E","cursos":90,"part":6614,"taxa":57.4,"geral":28.1,"ce":26.5,"fg":32.9,"low":59.7,"high":5.7,"cursos_high":20.3},{"area":"Análise e desenv. de sistemas","mod":"P","cursos":291,"part":5220,"taxa":74.3,"geral":28.1,"ce":27.4,"fg":30.3,"low":54.3,"high":10.6,"cursos_high":17.8},{"area":"Ciência da computação","mod":"E","cursos":5,"part":18,"taxa":42.9,"geral":31.9,"ce":31.4,"fg":33.3,"low":25.0,"high":12.5,"cursos_high":33.3},{"area":"Ciência da computação","mod":"P","cursos":199,"part":5377,"taxa":77.4,"geral":31.8,"ce":31.0,"fg":34.0,"low":64.0,"high":5.8,"cursos_high":7.8},{"area":"Gestão da TI","mod":"E","cursos":50,"part":2411,"taxa":53.7,"geral":36.9,"ce":38.8,"fg":31.1,"low":18.0,"high":18.2,"cursos_high":37.0},{"area":"Gestão da TI","mod":"P","cursos":90,"part":1123,"taxa":70.2,"geral":32.5,"ce":34.3,"fg":27.2,"low":65.1,"high":3.1,"cursos_high":9.8},{"area":"Redes de computadores","mod":"E","cursos":27,"part":900,"taxa":59.6,"geral":27.0,"ce":26.7,"fg":28.0,"low":27.4,"high":2.2,"cursos_high":9.1},{"area":"Redes de computadores","mod":"P","cursos":95,"part":728,"taxa":65.0,"geral":27.3,"ce":27.3,"fg":27.2,"low":48.5,"high":8.5,"cursos_high":13.0},{"area":"Sistemas de informação","mod":"E","cursos":16,"part":631,"taxa":32.9,"geral":35.8,"ce":36.8,"fg":32.8,"low":67.4,"high":0.6,"cursos_high":7.1},{"area":"Sistemas de informação","mod":"P","cursos":289,"part":4985,"taxa":73.9,"geral":37.0,"ce":38.2,"fg":33.3,"low":41.9,"high":12.1,"cursos_high":14.5}],"grau":[{"grau":"B","mod":"E","cursos":21,"part":649,"taxa":33.1,"geral":35.7,"ce":36.7,"fg":32.8,"low":66.3,"high":0.9,"cursos_high":11.8},{"grau":"B","mod":"P","cursos":488,"part":10362,"taxa":75.7,"geral":34.3,"ce":34.5,"fg":33.6,"low":53.4,"high":8.8,"cursos_high":11.6},{"grau":"T","mod":"E","cursos":167,"part":9925,"taxa":56.7,"geral":30.1,"ce":29.5,"fg":32.0,"low":46.7,"high":8.4,"cursos_high":23.8},{"grau":"T","mod":"P","cursos":476,"part":7071,"taxa":72.6,"geral":28.7,"ce":28.5,"fg":29.5,"low":55.4,"high":9.2,"cursos_high":15.4}],"tot":[{"mod":"E","cursos":188,"part":10574,"taxa":54.3,"geral":30.5,"ce":29.9,"fg":32.0,"low":47.9,"high":7.9,"cursos_high":22.6},{"mod":"P","cursos":964,"part":17433,"taxa":74.4,"geral":32.0,"ce":32.0,"fg":32.0,"low":54.2,"high":9.0,"cursos_high":13.4}]}},"2017":{"all":{"area":[{"area":"Análise e desenv. de sistemas","mod":"E","cursos":26,"part":1779,"taxa":71.4,"geral":36.8,"ce":32.9,"fg":48.5,"low":45.6,"high":6.9,"cursos_high":12.5},{"area":"Análise e desenv. de sistemas","mod":"P","cursos":360,"part":7974,"taxa":79.4,"geral":40.9,"ce":38.5,"fg":48.0,"low":23.7,"high":30.6,"cursos_high":28.0},{"area":"Ciência da computação","mod":"P","cursos":311,"part":8491,"taxa":83.4,"geral":43.3,"ce":39.6,"fg":54.2,"low":29.2,"high":42.0,"cursos_high":32.2},{"area":"Gestão da TI","mod":"E","cursos":17,"part":1410,"taxa":68.6,"geral":45.7,"ce":45.1,"fg":47.4,"low":12.5,"high":35.8,"cursos_high":41.2},{"area":"Gestão da TI","mod":"P","cursos":118,"part":1845,"taxa":73.4,"geral":45.2,"ce":44.7,"fg":46.8,"low":24.3,"high":38.5,"cursos_high":34.7},{"area":"Redes de computadores","mod":"E","cursos":2,"part":148,"taxa":81.8,"geral":30.7,"ce":27.1,"fg":41.3,"low":48.0,"high":0.0,"cursos_high":0.0},{"area":"Redes de computadores","mod":"P","cursos":182,"part":2368,"taxa":74.9,"geral":33.8,"ce":30.5,"fg":43.9,"low":11.2,"high":32.3,"cursos_high":31.4},{"area":"Sistemas de informação","mod":"E","cursos":11,"part":769,"taxa":71.5,"geral":44.8,"ce":42.8,"fg":50.8,"low":14.8,"high":3.1,"cursos_high":10.0},{"area":"Sistemas de informação","mod":"P","cursos":460,"part":11227,"taxa":80.7,"geral":44.7,"ce":42.8,"fg":50.3,"low":33.0,"high":24.2,"cursos_high":22.7}],"grau":[{"grau":"B","mod":"E","cursos":11,"part":769,"taxa":71.5,"geral":44.8,"ce":42.8,"fg":50.8,"low":14.8,"high":3.1,"cursos_high":10.0},{"grau":"B","mod":"P","cursos":771,"part":19718,"taxa":81.8,"geral":44.1,"ce":41.4,"fg":52.0,"low":31.4,"high":31.9,"cursos_high":26.6},{"grau":"T","mod":"E","cursos":45,"part":3337,"taxa":70.6,"geral":40.3,"ce":37.8,"fg":47.7,"low":31.7,"high":18.8,"cursos_high":23.3},{"grau":"T","mod":"P","cursos":660,"part":12187,"taxa":77.5,"geral":40.2,"ce":37.9,"fg":47.0,"low":21.3,"high":32.1,"cursos_high":30.0}],"tot":[{"mod":"E","cursos":56,"part":4106,"taxa":70.8,"geral":41.1,"ce":38.7,"fg":48.3,"low":28.5,"high":15.9,"cursos_high":20.8},{"mod":"P","cursos":1431,"part":31905,"taxa":80.1,"geral":42.6,"ce":40.1,"fg":50.1,"low":27.5,"high":32.0,"cursos_high":28.1}]},"pub":{"area":[{"area":"Análise e desenv. de sistemas","mod":"E","cursos":2,"part":103,"taxa":66.9,"geral":43.6,"ce":39.6,"fg":55.6,"low":15.5,"high":84.5,"cursos_high":50.0},{"area":"Análise e desenv. de sistemas","mod":"P","cursos":124,"part":3820,"taxa":84.7,"geral":43.4,"ce":40.9,"fg":50.7,"low":10.7,"high":44.9,"cursos_high":43.9},{"area":"Ciência da computação","mod":"P","cursos":121,"part":3851,"taxa":88.7,"geral":48.8,"ce":45.9,"fg":57.3,"low":9.0,"high":74.5,"cursos_high":60.8},{"area":"Gestão da TI","mod":"P","cursos":17,"part":532,"taxa":79.5,"geral":47.6,"ce":46.9,"fg":49.5,"low":8.1,"high":53.6,"cursos_high":52.9},{"area":"Redes de computadores","mod":"P","cursos":23,"part":449,"taxa":77.7,"geral":36.0,"ce":31.8,"fg":48.6,"low":1.6,"high":40.2,"cursos_high":47.6},{"area":"Sistemas de informação","mod":"E","cursos":4,"part":205,"taxa":72.7,"geral":40.9,"ce":37.6,"fg":50.7,"low":55.6,"high":11.7,"cursos_high":25.0},{"area":"Sistemas de informação","mod":"P","cursos":105,"part":2938,"taxa":83.2,"geral":48.3,"ce":46.3,"fg":54.3,"low":18.2,"high":46.0,"cursos_high":44.7}],"grau":[{"grau":"B","mod":"E","cursos":4,"part":205,"taxa":72.7,"geral":40.9,"ce":37.6,"fg":50.7,"low":55.6,"high":11.7,"cursos_high":25.0},{"grau":"B","mod":"P","cursos":226,"part":6789,"taxa":86.3,"geral":48.5,"ce":46.0,"fg":56.0,"low":13.0,"high":62.2,"cursos_high":53.4},{"grau":"T","mod":"E","cursos":2,"part":103,"taxa":66.9,"geral":43.6,"ce":39.6,"fg":55.6,"low":15.5,"high":84.5,"cursos_high":50.0},{"grau":"T","mod":"P","cursos":164,"part":4801,"taxa":83.4,"geral":43.1,"ce":40.7,"fg":50.4,"low":9.6,"high":45.4,"cursos_high":45.3}],"tot":[{"mod":"E","cursos":6,"part":308,"taxa":70.6,"geral":41.8,"ce":38.3,"fg":52.3,"low":42.2,"high":36.0,"cursos_high":33.3},{"mod":"P","cursos":390,"part":11590,"taxa":85.0,"geral":46.3,"ce":43.8,"fg":53.7,"low":11.6,"high":55.2,"cursos_high":50.0}]},"priv":{"area":[{"area":"Análise e desenv. de sistemas","mod":"E","cursos":24,"part":1676,"taxa":71.7,"geral":36.4,"ce":32.5,"fg":48.0,"low":47.4,"high":2.1,"cursos_high":9.1},{"area":"Análise e desenv. de sistemas","mod":"P","cursos":236,"part":4154,"taxa":75.1,"geral":38.6,"ce":36.4,"fg":45.5,"low":35.6,"high":17.4,"cursos_high":19.1},{"area":"Ciência da computação","mod":"P","cursos":190,"part":4640,"taxa":79.4,"geral":38.7,"ce":34.4,"fg":51.5,"low":46.0,"high":15.1,"cursos_high":13.9},{"area":"Gestão da TI","mod":"E","cursos":17,"part":1410,"taxa":68.6,"geral":45.7,"ce":45.1,"fg":47.4,"low":12.5,"high":35.8,"cursos_high":41.2},{"area":"Gestão da TI","mod":"P","cursos":101,"part":1313,"taxa":71.2,"geral":44.3,"ce":43.8,"fg":45.6,"low":31.0,"high":32.4,"cursos_high":31.0},{"area":"Redes de computadores","mod":"E","cursos":2,"part":148,"taxa":81.8,"geral":30.7,"ce":27.1,"fg":41.3,"low":48.0,"high":0.0,"cursos_high":0.0},{"area":"Redes de computadores","mod":"P","cursos":159,"part":1919,"taxa":74.3,"geral":33.3,"ce":30.2,"fg":42.8,"low":13.5,"high":30.5,"cursos_high":28.9},{"area":"Sistemas de informação","mod":"E","cursos":7,"part":564,"taxa":71.0,"geral":46.2,"ce":44.7,"fg":50.8,"low":0.0,"high":0.0,"cursos_high":0.0},{"area":"Sistemas de informação","mod":"P","cursos":355,"part":8289,"taxa":79.8,"geral":43.4,"ce":41.6,"fg":48.9,"low":38.3,"high":16.5,"cursos_high":16.1}],"grau":[{"grau":"B","mod":"E","cursos":7,"part":564,"taxa":71.0,"geral":46.2,"ce":44.7,"fg":50.8,"low":0.0,"high":0.0,"cursos_high":0.0},{"grau":"B","mod":"P","cursos":545,"part":12929,"taxa":79.7,"geral":41.7,"ce":39.0,"fg":49.9,"low":41.0,"high":16.0,"cursos_high":15.3},{"grau":"T","mod":"E","cursos":43,"part":3234,"taxa":70.7,"geral":40.2,"ce":37.7,"fg":47.5,"low":32.2,"high":16.7,"cursos_high":22.0},{"grau":"T","mod":"P","cursos":496,"part":7386,"taxa":74.2,"geral":38.3,"ce":36.1,"fg":44.8,"low":29.0,"high":23.5,"cursos_high":24.4}],"tot":[{"mod":"E","cursos":50,"part":3798,"taxa":70.8,"geral":41.1,"ce":38.8,"fg":48.0,"low":27.4,"high":14.2,"cursos_high":19.1},{"mod":"P","cursos":1041,"part":20315,"taxa":77.6,"geral":40.5,"ce":38.0,"fg":48.0,"low":36.7,"high":18.7,"cursos_high":19.4}]}}};
+const QN={'Ciência da computação':'Ciência da computação','Sistemas de informação':'Sistemas de informação','Análise e desenv. de sistemas':'Análise e Desenvolvimento de Sistemas (tecnólogo)','Gestão da TI':'Gestão da TI (tecnólogo)','Redes de computadores':'Redes de computadores (tecnólogo)',B:'Bacharelado',T:'Tecnólogo'};
+const QORD={area:['Ciência da computação','Sistemas de informação','Análise e desenv. de sistemas','Gestão da TI','Redes de computadores'],grau:['B','T']};
+const QMET={geral:['nota geral',' pts'],ce:['nota em conhecimento específico',' pts'],fg:['nota em formação geral',' pts'],high:['fatia de alunos em cursos com conceito 4 ou 5','%'],low:['fatia de alunos em cursos com conceito 1 ou 2','%'],taxa:['taxa de comparecimento','%']};
+Object.assign(F,{'q-ed':'2021','q-rede':'all','q-by':'area'});
+const qMet=document.getElementById('qMet');qMet.onchange=drawQ;
+const fmt1=v=>v==null?'–':v.toFixed(1).replace('.',',');
+function drawQ(){const ed=F['q-ed'],rede=F['q-rede'],by=F['q-by'],met=qMet.value,rows=Q[ed][rede][by],box=document.getElementById('qChart');
+const pct=QMET[met][1]==='%';const max=pct?100:Math.max(...rows.map(r=>r[met]||0))*1.08;
+box.innerHTML='';
+QORD[by].forEach(k=>{const P=rows.find(r=>r[by]===k&&r.mod==='P'),E=rows.find(r=>r[by]===k&&r.mod==='E');if(!P&&!E)return;
+const g=document.createElement('div');g.className='qgrp';g.innerHTML='<p class="qn">'+QN[k]+'</p>';
+[['Presencial',P,'--b1'],['EaD',E,'--t1']].forEach(([lab,r,c])=>{const l=document.createElement('div');l.className='qline';
+if(!r||r[met]==null){l.innerHTML='<span class="ql">'+lab+'</span><span class="qt"><span class="qv"><small>sem cursos avaliados neste recorte</small></span></span>';}
+else{const small=r.part<100;l.innerHTML='<span class="ql">'+lab+'</span><span class="qt"><span class="qb'+(small?' small':'')+'" style="width:0;background:var('+c+')"></span><span class="qv">'+fmt1(r[met])+(pct?'%':'')+' <small>'+nf.format(r.part)+' alunos em '+r.cursos+' cursos'+(small?', amostra pequena':'')+'</small></span></span>';
+requestAnimationFrame(()=>{l.querySelector('.qb').style.width=Math.max(r[met]/max*70,0.5)+'%';});}
+g.appendChild(l);});box.appendChild(g);});
+const T=Q[ed][rede].tot,tp=T.find(r=>r.mod==='P'),te=T.find(r=>r.mod==='E');const redeTxt={all:'em todas as redes',pub:'nas instituições públicas',priv:'nas instituições privadas'}[rede];
+let s;if(!tp||!te||tp[met]==null||te[met]==null){s='Não há cursos suficientes para comparar as duas modalidades nesse recorte.';}
+else{const d=te[met]-tp[met];const u=pct?' p.p.':' pontos';s='Enade '+ed+', '+redeTxt+': a '+QMET[met][0]+' foi de <b>'+fmt1(tp[met])+(pct?'%':'')+'</b> no presencial e de <b>'+fmt1(te[met])+(pct?'%':'')+'</b> no EaD, ';
+s+=Math.abs(d)<0.5?'praticamente empatadas.':(d<0?'com o EaD '+fmt1(Math.abs(d))+u+' abaixo.':'com o EaD '+fmt1(d)+u+' acima.');
+if(te.part<300)s+=' A amostra de EaD é pequena, então leia com cautela.';}
+document.getElementById('qSummary').innerHTML=s;}
+drawQ();
+
+function drawAll(){drawMod();drawTech();}
+if(window.Chart){drawAll();}else{window.addEventListener('load',()=>window.Chart&&drawAll());}
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>window.Chart&&drawAll());
+new MutationObserver(()=>window.Chart&&drawAll()).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+window.addEventListener('resize',()=>renderRace(true));
+</script>
+</body>
+</html>
